@@ -1,0 +1,22 @@
+[global_config]
+  borderless = True
+  tab_position = hidden
+  title_font = RobotoMono Nerd Font 7
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    font = CaskaydiaCove Nerd Font Mono 8
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
