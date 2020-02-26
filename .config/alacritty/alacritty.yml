@@ -515,10 +515,10 @@ key_bindings:
   #- { key: Copy,                     action: Copy                             }
   #- { key: L,         mods: Control, action: ClearLogNotice                   }
   #- { key: L,         mods: Control, chars: "\x0c"                            }
-  - { key: PageUp,    action: ScrollPageUp,   mode: ~Alt       }
-  - { key: PageUp,    mods: Shift,   action: ScrollToTop,   mode: ~Alt       }
-  - { key: PageDown,  action: ScrollPageDown, mode: ~Alt       }
-  - { key: PageDown,  mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
+  - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
+  - { key: PageUp,    mods: Control, action: ScrollToTop,   mode: ~Alt       }
+  - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
+  - { key: PageDown,  mods: Control,   action: ScrollToBottom, mode: ~Alt       }
   #- { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
 
