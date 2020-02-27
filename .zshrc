@@ -146,6 +146,10 @@ ydl () {
     youtube-dl --extract-audio --no-playlist --audio-format mp3 $1
 }
 
+ydlp () {
+    youtube-dl --extract-audio --audio-format mp3 $1
+}
+
 say () {
     echo "$@" | festival --tts
 }
