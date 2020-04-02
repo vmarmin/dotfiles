@@ -101,7 +101,7 @@ set copyindent                  " use existing indents for new indents
 set preserveindent              " save as much indent structure as possible
 
 " color / appearance
-colorscheme molokai
+colorscheme gruvbox
 syntax on
 hi Normal guibg=NONE ctermbg=NONE
 let g:airline_theme='angr'
@@ -125,4 +125,15 @@ map <leader>gr  :YcmCompleter GoToReferences<CR>
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+" syntastic -----------------
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
