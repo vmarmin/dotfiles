@@ -70,6 +70,9 @@ set smartcase
 
 " ctrlp
 let g:ctrlp_user_command=['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_use_caching=0
+
+" netrw
 let g:netrw_browse_split=2
 let g:netrw_banner=0
 let g:netrw_winsize=25
