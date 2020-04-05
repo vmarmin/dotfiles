@@ -28,51 +28,61 @@ endif
 " END - Setting up Vundle - the vim plugin bundler
 
 call vundle#begin()
-"git interface
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-"filesystem
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 Plugin 'junegunn/fzf.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'preservim/nerdcommenter'
-
-" colorschemes
 Plugin 'jnurmine/Zenburn'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-"html
-"  isnowfy only compatible with python not python3
-" Plugin 'isnowfy/python-vim-instant-markdown'
+Plugin 'mbbill/undotree'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'nelstrom/vim-markdown-preview'
-"python sytax checker
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/Pydiction'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
-
-"auto-completion stuff
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'jremmen/vim-ripgrep'
 call vundle#end()
 
 
 " leader + nav + general ------------------------------------------------------------------------
 
+syntax on
 let mapleader=" "
 set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
 set nu
 set relativenumber
+set noerrorbells
+set smartcase
+
+" ctrlp
+let g:ctrlp_user_command=['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:netrw_browse_split=2
+let g:netrw_banner=0
+let g:netrw_winsize=25
+
+" ripgrep
+if executable('rg')
+    let g:rg_derive_route='true'
+endif
+nnoremap <leader>ps :Rg<space>
+
 
 " disable wrap
-set textwidth=0
-set wrapmargin=0
+set nowrap
 
 " Make `jj` and `jk` throw you into normal mode
 inoremap jj <esc>
@@ -83,10 +93,11 @@ set splitbelow
 set splitright
 
 " buffer nav
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>u :UndotreeShow<CR>
 
 " tab / space management
 set showmatch                   " show matching brackets
@@ -102,9 +113,10 @@ set preserveindent              " save as much indent structure as possible
 
 " color / appearance
 colorscheme gruvbox
-syntax on
-hi Normal guibg=NONE ctermbg=NONE
+set background=dark
+let g:gruvbox_contrast_dark="soft"
 let g:airline_theme='angr'
+set colorcolumn=80
 
 " wildmenu
 set path+=**
@@ -120,6 +132,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 "custom keys
 map <leader>gd  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>gr  :YcmCompleter GoToReferences<CR>
+map <leader>gf  :YcmCompleter FixIt<CR>
 
 " nerdtree ----------------------------------------------------------------------
 
