@@ -1,53 +1,25 @@
-set nocompatible
-filetype plugin on
-filetype plugin indent on    " enables filetype detection
-
-" vundle -----------------------------------------------------------------------------------
-
-" START - Setting up Vundle - the vim plugin bundler
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
-  echo "Installing Vundle.."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  let iCanHazVundle=0
-endif
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-if iCanHazVundle == 0
-  echo "Installing Bundles, please ignore key map error messages"
-  echo ""
-  :source $MYVIMRC
-  :PluginInstall
-endif
-" END - Setting up Vundle - the vim plugin bundler
-
-call vundle#begin()
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-surround'
-Plugin 'junegunn/fzf.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'preservim/nerdcommenter'
-Plugin 'jnurmine/Zenburn'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'mbbill/undotree'
-Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'jremmen/vim-ripgrep'
-call vundle#end()
-
+" vim-plug installation:
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'jnurmine/Zenburn'
+Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mbbill/undotree'
+Plug 'nvie/vim-flake8'
+Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe'
+Plug 'jremmen/vim-ripgrep'
+call plug#end()
 
 " leader + nav + general ------------------------------------------------------------------------
 
