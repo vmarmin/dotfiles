@@ -67,6 +67,13 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+" buffer resize
+nnoremap <C-h> :wincmd <<CR>
+nnoremap <C-j> :wincmd +<CR>
+nnoremap <C-k> :wincmd -<CR>
+nnoremap <C-l> :wincmd ><CR>
+
+" undo
 nnoremap <leader>u :UndotreeShow<CR>
 
 " tab / space management
@@ -85,7 +92,7 @@ set preserveindent              " save as much indent structure as possible
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark="soft"
-let g:airline_theme='angr'
+let g:airline_theme='gruvbox'
 set colorcolumn=80
 
 " wildmenu
