@@ -21,7 +21,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'jremmen/vim-ripgrep'
 call plug#end()
 
-" leader + nav + general ------------------------------------------------------------------------
+" leader + nav + general -----------------------------------------------------
 
 syntax on
 let mapleader=" "
@@ -101,7 +101,7 @@ set wildmenu
 set wildignore+=**/.git/**
 set hidden
 
-" YCM ---------------------------------------------------------------------------------------
+" YCM ------------------------------------------------------------------------
 
 "autocomplete
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -111,7 +111,7 @@ map <leader>gd  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>gr  :YcmCompleter GoToReferences<CR>
 map <leader>gf  :YcmCompleter FixIt<CR>
 
-" nerdtree ----------------------------------------------------------------------
+" nerdtree -------------------------------------------------------------------
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -127,3 +127,34 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" dev mappings ---------------------------------------------------------------
+map <leader>py :!python %<cr>
+
+" git gutter -----------------------------------------------------------------
+
+" deactivate map
+let g:gitgutter_map_keys = 0
+
+" max signs
+let g:gitgutter_max_signs = 400
+
+" status line
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
+
+" mappings
+nmap <leader>ggp <Plug>(GitGutterPrevHunk)
+nmap <leader>ggn <Plug>(GitGutterNextHunk)
+nmap <leader>ggu <Plug>(GitGutterUndoHunk)
+nmap <leader>ggs <Plug>(GitGutterStageHunk)
+
+" nerdcommenter -------------------------------------------------------------
+
+" deactivate default mappings
+let g:NERDCreateDefaultMappings = 0
+
+" mappings
+nmap <leader>cc <Plug>NERDCommenterToggle
