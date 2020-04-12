@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
+Plug 'ap/vim-css-color'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
@@ -19,6 +20,8 @@ Plug 'nvie/vim-flake8'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
 Plug 'jremmen/vim-ripgrep'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " leader + nav + general -----------------------------------------------------
@@ -68,10 +71,14 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 " buffer resize
-nnoremap <C-h> :wincmd <<CR>
-nnoremap <C-j> :wincmd +<CR>
-nnoremap <C-k> :wincmd -<CR>
-nnoremap <C-l> :wincmd ><CR>
+nnoremap <C-h> :vertical resize -5<CR>
+nnoremap <C-j> :resize +5<CR>
+nnoremap <C-k> :resize -5<CR>
+nnoremap <C-l> :vertical resize +5<CR>
+
+" move selection
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
 
 " undo
 nnoremap <leader>u :UndotreeShow<CR>
@@ -88,12 +95,20 @@ set shiftround                  " always round indents to multiple of shiftwidth
 set copyindent                  " use existing indents for new indents
 set preserveindent              " save as much indent structure as possible
 
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+autocmd BufWritePre * :call TrimWhitespace()
+
 " color / appearance
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark="soft"
-let g:airline_theme='gruvbox'
 set colorcolumn=80
+set encoding=utf8
 
 " wildmenu
 set path+=**
@@ -101,28 +116,65 @@ set wildmenu
 set wildignore+=**/.git/**
 set hidden
 
-" YCM ------------------------------------------------------------------------
+" vim airline ----------------------------------------------------------------
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='gruvbox'
+
+" autocompletion (ycm + coc) -------------------------------------------------
 
 "autocomplete
-let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 "custom keys
-map <leader>gd  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map <leader>gr  :YcmCompleter GoToReferences<CR>
-map <leader>gf  :YcmCompleter FixIt<CR>
+fun! GoYCM()
+    nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
+    nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+    nnoremap <buffer> <silent> <leader>gf :YcmCompleter FixIt<CR>
+    nnoremap <buffer> <silent> <leader>gh :YcmCompleter GetDoc<CR>
+    nnoremap <buffer> <silent> <leader>gt :YcmCompleter GetType<CR>
+    nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<space>
+endfun
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+fun! GoCoc()
+    inoremap <buffer> <silent><expr> <TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ coc#refresh()
+
+    inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <buffer> <silent><expr> <C-space> coc#refresh()
+
+    " GoTo code navigation.
+    nmap <buffer> <leader>gd <Plug>(coc-definition)
+    nmap <buffer> <leader>gy <Plug>(coc-type-definition)
+    nmap <buffer> <leader>gi <Plug>(coc-implementation)
+    nmap <buffer> <leader>gf <Plug>(coc-fix-current)
+    nmap <buffer> <leader>gr <Plug>(coc-references)
+    nnoremap <buffer> <leader>cr :CocRestart
+endfun
+
+autocmd FileType typescript,py :call GoYCM()
+autocmd FileType cpp,cxx,h,hpp,c :call GoCoc()
 
 " nerdtree -------------------------------------------------------------------
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" syntastic -----------------
+" syntastic ------------------------------------------------------------------
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -158,3 +210,4 @@ let g:NERDCreateDefaultMappings = 0
 
 " mappings
 nmap <leader>cc <Plug>NERDCommenterToggle
+
