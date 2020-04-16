@@ -15,9 +15,13 @@ Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 Plug 'mbbill/undotree'
 Plug 'nvie/vim-flake8'
-Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
+Plug 'jiangmiao/auto-pairs'
+Plug 'sheerun/vim-polyglot'
 Plug 'Valloric/YouCompleteMe'
 Plug 'jremmen/vim-ripgrep'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -66,15 +70,22 @@ set splitbelow
 set splitright
 
 " buffer nav
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap <C-h> :wincmd h<CR>
+nnoremap <C-j> :wincmd j<CR>
+nnoremap <C-k> :wincmd k<CR>
+nnoremap <C-l> :wincmd l<CR>
 " buffer resize
-nnoremap <C-h> :vertical resize -5<CR>
-nnoremap <C-j> :resize +5<CR>
-nnoremap <C-k> :resize -5<CR>
-nnoremap <C-l> :vertical resize +5<CR>
+if has("mac")
+    nnoremap ˙ :vertical resize -5<CR>
+    nnoremap ∆ :resize +5<CR>
+    nnoremap ˚ :resize -5<CR>
+    nnoremap ¬ :vertical resize +5<CR>
+else
+    nnoremap <M-h> :vertical resize -5<CR>
+    nnoremap <M-j> :resize +5<CR>
+    nnoremap <M-k> :resize -5<CR>
+    nnoremap <M-l> :vertical resize +5<CR>
+endif
 
 " move selection
 vnoremap J :m '>+1<cr>gv=gv
@@ -160,7 +171,7 @@ fun! GoCoc()
     nnoremap <buffer> <leader>cr :CocRestart
 endfun
 
-autocmd FileType typescript,py :call GoYCM()
+autocmd FileType typescript,python,python3 :call GoYCM()
 autocmd FileType cpp,cxx,h,hpp,c :call GoCoc()
 
 " nerdtree -------------------------------------------------------------------
@@ -170,14 +181,14 @@ map <C-n> :NERDTreeToggle<CR>
 
 " syntastic ------------------------------------------------------------------
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 0
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 " dev mappings ---------------------------------------------------------------
 map <leader>py :!python %<cr>
@@ -203,11 +214,43 @@ nmap <leader>ggn <Plug>(GitGutterNextHunk)
 nmap <leader>ggu <Plug>(GitGutterUndoHunk)
 nmap <leader>ggs <Plug>(GitGutterStageHunk)
 
-" nerdcommenter -------------------------------------------------------------
+" nerdcommenter --------------------------------------------------------------
 
 " deactivate default mappings
 let g:NERDCreateDefaultMappings = 0
 
 " mappings
 nmap <leader>cc <Plug>NERDCommenterToggle
+vmap <leader>cc <Plug>NERDCommenterToggle
+
+" ale ------------------------------------------------------------------------
+
+let g:airline#extensions#ale#enabled = 1
+
+" Write this in your vimrc file
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
+
+let g:ale_linters = {
+      \   'python': ['flake8', 'pylint'],
+      \   'ruby': ['standardrb', 'rubocop'],
+      \   'javascript': ['eslint'],
+      \}
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+set statusline=%{LinterStatus()}
 
