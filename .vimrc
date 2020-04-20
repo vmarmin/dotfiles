@@ -13,6 +13,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'jnurmine/Zenburn'
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula'  }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'christoomey/vim-tmux-navigator'
