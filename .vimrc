@@ -8,7 +8,7 @@ Plug 'ap/vim-css-color'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'jnurmine/Zenburn'
 Plug 'flazz/vim-colorschemes'
@@ -235,10 +235,17 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 
 let g:ale_linters = {
-      \   'python': ['flake8', 'pylint'],
-      \   'ruby': ['standardrb', 'rubocop'],
-      \   'javascript': ['eslint'],
-      \}
+    \ 'python': ['flake8', 'pylint'],
+    \ 'ruby': ['standardrb', 'rubocop'],
+    \ 'javascript': ['eslint'],
+    \}
+
+let g:ale_fixers = {
+    \ "python": ["isort", "black"]
+    \}
+
+nnoremap <leader>af <Plug>ALEFix
+nnoremap <leader>as <Plug>ALEFixSuggest
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -254,3 +261,16 @@ function! LinterStatus() abort
 endfunction
 set statusline=%{LinterStatus()}
 
+" vimux ----------------------------------------------------------------------
+
+
+" Run the current file with rspec
+nmap <Leader>rp :call VimuxRunCommand("clear; python " . bufname("%"))<CR>
+" Prompt for a command to run map
+nmap <Leader>vp :VimuxPromptCommand<CR>
+nmap <Leader>vm :VimuxPromptCommand("make ")<CR>
+nmap <Leader>vl :VimuxRunLastCommand<CR>
+nmap <Leader>vi :VimuxInspectRunner<CR>
+nmap <Leader>vq :VimuxCloseRunner<CR>
+nmap <Leader>vx :VimuxInterruptRunner<CR>
+nmap <Leader>vz :call VimuxZoomRunner()<CR>
