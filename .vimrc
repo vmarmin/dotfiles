@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
+Plug 'vifm/vifm.vim'
 Plug 'tpope/vim-ragtag'
 Plug 'ap/vim-css-color'
 Plug 'xuyuanp/nerdtree-git-plugin'
@@ -122,7 +123,8 @@ autocmd BufWritePre * :call TrimWhitespace()
 " color / appearance
 colorscheme gruvbox
 set background=dark
-hi Normal ctermbg=NONE guibg=NONE
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 let g:gruvbox_contrast_dark="soft"
 set colorcolumn=80
 set encoding=utf8
@@ -271,7 +273,6 @@ set statusline=%{LinterStatus()}
 
 " vimux ----------------------------------------------------------------------
 
-
 " Run the current file with rspec
 nmap <Leader>rp :call VimuxRunCommand("clear; python " . bufname("%"))<CR>
 " Prompt for a command to run map
@@ -282,3 +283,7 @@ nmap <Leader>vi :VimuxInspectRunner<CR>
 nmap <Leader>vq :VimuxCloseRunner<CR>
 nmap <Leader>vx :VimuxInterruptRunner<CR>
 nmap <Leader>vz :call VimuxZoomRunner()<CR>
+
+" vifm ----------------------------------------------------------------------
+
+nmap <leader>fm :Vifm .<CR>
