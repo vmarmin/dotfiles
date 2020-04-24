@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-ragtag'
 Plug 'ap/vim-css-color'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
@@ -38,10 +39,10 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-set nu
-set relativenumber
+"set number relativenumber
 set noerrorbells
 set smartcase
+set cursorline
 
 " ctrlp
 let g:ctrlp_user_command=['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -77,15 +78,15 @@ nnoremap <C-k> :wincmd k<CR>
 nnoremap <C-l> :wincmd l<CR>
 " buffer resize
 if has("mac")
-    nnoremap ˙ :vertical resize -5<CR>
-    nnoremap ∆ :resize +5<CR>
-    nnoremap ˚ :resize -5<CR>
-    nnoremap ¬ :vertical resize +5<CR>
+    nnoremap ˙ :vertical resize -3<CR>
+    nnoremap ∆ :resize +3<CR>
+    nnoremap ˚ :resize -3<CR>
+    nnoremap ¬ :vertical resize +3<CR>
 else
-    nnoremap <M-h> :vertical resize -5<CR>
-    nnoremap <M-j> :resize +5<CR>
-    nnoremap <M-k> :resize -5<CR>
-    nnoremap <M-l> :vertical resize +5<CR>
+    nnoremap <M-h> :vertical resize -3<CR>
+    nnoremap <M-j> :resize +3<CR>
+    nnoremap <M-k> :resize -3<CR>
+    nnoremap <M-l> :vertical resize +3<CR>
 endif
 
 " move selection
@@ -106,6 +107,9 @@ set tabstop=4                   " for proper display of files with tabs
 set shiftround                  " always round indents to multiple of shiftwidth
 set copyindent                  " use existing indents for new indents
 set preserveindent              " save as much indent structure as possible
+
+" smaller indentation for html and xml
+autocmd FileType html,xml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -172,12 +176,14 @@ fun! GoCoc()
     nnoremap <buffer> <leader>cr :CocRestart
 endfun
 
-autocmd FileType typescript,python,python3 :call GoYCM()
-autocmd FileType cpp,cxx,h,hpp,c :call GoCoc()
+set statusline^=%{coc#status()}
+
+autocmd FileType typescript :call GoYCM()
+autocmd FileType cpp,cxx,h,hpp,c,python,python3 :call GoCoc()
 
 " nerdtree -------------------------------------------------------------------
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 " syntastic ------------------------------------------------------------------
@@ -245,8 +251,8 @@ let g:ale_fixers = {
     \ "python": ["isort", "black"]
     \}
 
-nnoremap <leader>af <Plug>ALEFix
-nnoremap <leader>as <Plug>ALEFixSuggest
+nnoremap <leader>af :ALEFix<CR>
+nnoremap <leader>as :ALEFixSuggest<CR>
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
