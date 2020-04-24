@@ -122,6 +122,7 @@ autocmd BufWritePre * :call TrimWhitespace()
 " color / appearance
 colorscheme gruvbox
 set background=dark
+hi Normal ctermbg=NONE guibg=NONE
 let g:gruvbox_contrast_dark="soft"
 set colorcolumn=80
 set encoding=utf8
