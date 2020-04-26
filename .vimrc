@@ -26,6 +26,7 @@ Plug 'dense-analysis/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'Valloric/YouCompleteMe'
+Plug 'plasticboy/vim-markdown'
 Plug 'jremmen/vim-ripgrep'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
@@ -287,3 +288,7 @@ nmap <Leader>vz :call VimuxZoomRunner()<CR>
 " vifm ----------------------------------------------------------------------
 
 nmap <leader>fm :Vifm .<CR>
+
+" markdown ------------------------------------------------------------------
+
+let g:vim_markdown_folding_disabled = 1
