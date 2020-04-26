@@ -287,7 +287,7 @@ nmap <Leader>vz :call VimuxZoomRunner()<CR>
 
 " vifm ----------------------------------------------------------------------
 
-nmap <leader>fm :Vifm .<CR>
+nmap <leader>fm :Vifm<CR>
 
 " markdown ------------------------------------------------------------------
 
