@@ -463,7 +463,7 @@ set classify=' :dir:/, :exe:, :reg:, :link:'
 " various file names
 set classify+=' ::../::, ::*.sh::, ::*.[hc]pp::, ::*.[hc]::, ::/^copying|license$/::, ::.git/,,*.git/::, ::*.epub,,*.fb2,,*.djvu::, ::*.pdf::, ::*.htm,,*.html,,**.[sx]html,,*.xml::'
 " dev file names
-set classify+=' ::*.py::, ::*.md::,ﬥ ::*.json::, ::*.csv::'
+set classify+=' ::*.py::, ::*.md::,ﬥ ::*.json::, ::*.csv::, ::*rc::, ::*info::'
 " archives
 set classify+=' ::*.7z,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
 " images
