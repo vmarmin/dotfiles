@@ -162,6 +162,14 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 fun! GoCoc()
     inoremap <buffer> <silent><expr> <TAB>
                 \ pumvisible() ? "\<C-n>" :
@@ -170,13 +178,18 @@ fun! GoCoc()
 
     inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
     inoremap <buffer> <silent><expr> <C-space> coc#refresh()
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    autocmd CursorHold * silent call CocActionAsync('highlight')
 
     " GoTo code navigation.
     nmap <buffer> <leader>gd <Plug>(coc-definition)
     nmap <buffer> <leader>gy <Plug>(coc-type-definition)
     nmap <buffer> <leader>gi <Plug>(coc-implementation)
-    nmap <buffer> <leader>gf <Plug>(coc-fix-current)
+    nmap <buffer> <leader>qf <Plug>(coc-fix-current)
     nmap <buffer> <leader>gr <Plug>(coc-references)
+    nmap <buffer> <leader>rn <Plug>(coc-rename)
+    xmap <buffer> <leader>f  <Plug>(coc-format-selected)
+    nmap <buffer> <leader>f  <Plug>(coc-format-selected)
     nnoremap <buffer> <leader>cr :CocRestart
 endfun
 
@@ -189,17 +202,6 @@ autocmd FileType cpp,cxx,h,hpp,c,python,python3 :call GoCoc()
 
 let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
-
-" syntastic ------------------------------------------------------------------
-
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 0
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
 
 " dev mappings ---------------------------------------------------------------
 map <leader>py :!python %<cr>
