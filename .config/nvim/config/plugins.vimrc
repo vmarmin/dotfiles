@@ -40,7 +40,13 @@ fun! GoCoc()
                 \ <SID>check_back_space() ? "\<TAB>" :
                 \ coc#refresh()
 
-    inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    " navigate list with both tab and ctrl+[jk]
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    " validate list item with <CR>
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
     inoremap <buffer> <silent><expr> <C-space> coc#refresh()
     nnoremap <silent> K :call <SID>show_documentation()<CR>
     autocmd CursorHold * silent call CocActionAsync('highlight')
