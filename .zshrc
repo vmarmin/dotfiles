@@ -122,7 +122,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias l='ls -l'
-alias vi='vim'
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias tcpdump='sudo tcpdump'
 alias lrt='ls -lrt'
 alias ge='gedit'
