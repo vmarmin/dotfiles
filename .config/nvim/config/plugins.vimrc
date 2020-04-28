@@ -140,7 +140,7 @@ nmap <Leader>vz :call VimuxZoomRunner()<CR>
 " vifm ----------------------------------------------------------------------
 " vifm mapping
 nmap <leader>fm :Vifm<CR>
-" start vifm if no file specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Vifm | endif
-
+" use vifm instead of netrw
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
+let g:vifm_replace_netrw = 1
