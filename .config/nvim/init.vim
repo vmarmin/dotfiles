@@ -1,4 +1,4 @@
-" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc
+source $HOME/.config/nvim/config/init.vimrc
+source $HOME/.config/nvim/config/general.vimrc
+source $HOME/.config/nvim/config/plugins.vimrc
+source $HOME/.config/nvim/config/keys.vimrc

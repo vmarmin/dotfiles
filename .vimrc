@@ -6,6 +6,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'vifm/vifm.vim'
 Plug 'tpope/vim-ragtag'
+Plug 'lilydjwg/colorizer'
 Plug 'ap/vim-css-color'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
@@ -90,6 +91,10 @@ else
     nnoremap <M-k> :resize -3<CR>
     nnoremap <M-l> :vertical resize +3<CR>
 endif
+
+" tabbing
+vnoremap < <gv
+vnoremap > >gv
 
 " move selection
 vnoremap J :m '>+1<cr>gv=gv
@@ -259,6 +264,8 @@ let g:ale_fixers = {
 
 nnoremap <leader>af :ALEFix<CR>
 nnoremap <leader>as :ALEFixSuggest<CR>
+nnoremap <leader>an :ALENext<CR>
+nnoremap <leader>ap :ALEPrevious<CR>
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
