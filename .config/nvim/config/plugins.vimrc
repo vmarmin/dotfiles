@@ -125,5 +125,9 @@ nmap <Leader>vx :VimuxInterruptRunner<CR>
 nmap <Leader>vz :call VimuxZoomRunner()<CR>
 
 " vifm ----------------------------------------------------------------------
+" vifm mapping
 nmap <leader>fm :Vifm<CR>
+" start vifm if no file specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Vifm | endif
 
