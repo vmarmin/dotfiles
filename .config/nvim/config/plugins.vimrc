@@ -33,26 +33,33 @@ function! s:show_documentation()
   endif
 endfunction
 
-inoremap <buffer> <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
-inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <buffer> <silent><expr> <C-space> coc#refresh()
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" GoTo code navigation.
-nmap <buffer> <leader>gd <Plug>(coc-definition)
-nmap <buffer> <leader>gy <Plug>(coc-type-definition)
-nmap <buffer> <leader>gi <Plug>(coc-implementation)
-nmap <buffer> <leader>qf <Plug>(coc-fix-current)
-nmap <buffer> <leader>gr <Plug>(coc-references)
-nmap <buffer> <leader>rn <Plug>(coc-rename)
-xmap <buffer> <leader>f  <Plug>(coc-format-selected)
-nmap <buffer> <leader>f  <Plug>(coc-format-selected)
-nnoremap <buffer> <leader>cr :CocRestart
+
+fun! GoCoc()
+    inoremap <buffer> <silent><expr> <TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ coc#refresh()
+
+    inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <buffer> <silent><expr> <C-space> coc#refresh()
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    autocmd CursorHold * silent call CocActionAsync('highlight')
+
+    " GoTo code navigation.
+    nmap <buffer> <leader>gd <Plug>(coc-definition)
+    nmap <buffer> <leader>gy <Plug>(coc-type-definition)
+    nmap <buffer> <leader>gi <Plug>(coc-implementation)
+    nmap <buffer> <leader>qf <Plug>(coc-fix-current)
+    nmap <buffer> <leader>gr <Plug>(coc-references)
+    nmap <buffer> <leader>rn <Plug>(coc-rename)
+    xmap <buffer> <leader>f  <Plug>(coc-format-selected)
+    nmap <buffer> <leader>f  <Plug>(coc-format-selected)
+    nnoremap <buffer> <leader>cr :CocRestart
+endfun
+
 set statusline^=%{coc#status()}
 
+autocmd FileType * :call GoCoc()
 " git gutter -----------------------------------------------------------------
 " deactivate map
 let g:gitgutter_map_keys = 0
