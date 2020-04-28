@@ -7,8 +7,7 @@ nnoremap <C-h> :wincmd h<CR>
 nnoremap <C-j> :wincmd j<CR>
 nnoremap <C-k> :wincmd k<CR>
 nnoremap <C-l> :wincmd l<CR>
-nnoremap <C-]> :bnext<CR>
-nnoremap <C-[> :bprevious<CR>
+nnoremap <TAB> :bnext<CR>
 " buffer resize (for max and other)
 nnoremap ˙ :vertical resize -3<CR>
 nnoremap ∆ :resize +3<CR>
