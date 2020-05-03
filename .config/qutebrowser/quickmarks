@@ -8,3 +8,4 @@ rt https://www.rugby-transferts.com/top-14/clermont/
 # work
 jr http://jira.xiplink.com/browse/ATF-212?filter=-1
 jk http://jenkins.xiplink.com/
+dj http://localhost:8000/

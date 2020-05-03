@@ -13,7 +13,7 @@ config = config  # noqa: F821 pylint: disable=E0602,C0103
 
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
-config.load_autoconfig()
+# config.load_autoconfig()
 
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
@@ -1884,6 +1884,8 @@ config.bind('yy', 'yank')
 config.bind('{{', 'navigate prev -t')
 config.bind('}}', 'navigate next -t')
 config.bind('xx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always switching')
+config.bind('xb', 'config-cycle statusbar.hide')
+config.bind('xt', 'config-cycle tabs.show always switching')
 
 ## Bindings for caret mode
 config.bind('$', 'move-to-end-of-line', mode='caret')
