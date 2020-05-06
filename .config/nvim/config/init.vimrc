@@ -9,7 +9,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/nerdcommenter'
 Plug 'jnurmine/Zenburn'
 Plug 'morhetz/gruvbox'

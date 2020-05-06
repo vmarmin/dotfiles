@@ -1,6 +1,17 @@
-" ctrlp ----------------------------------------------------------------------
-let g:ctrlp_user_command=['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_use_caching=0
+" fzf -----------------------------------------------------------------------
+
+if has("mac")
+    set rtp+=/usr/local/opt/fzf
+else
+    set rtp+=~/.fzf
+endif
+let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-x': 'split',
+    \ 'ctrl-v': 'vsplit' }
+let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_preview_window = 'right:60%'
+nnoremap <C-p> :Files<CR>
 
 " ripgrep --------------------------------------------------------------------
 if executable('rg')
