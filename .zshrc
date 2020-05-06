@@ -103,7 +103,7 @@ alias randwp="feh --bg-fill --randomize /home/valentin/Pictures/wallpapers"
 alias i3config='vi ~/.i3/config'
 
 # Dotfiles management
-dotfiles_repo=/home/valentin/Documents/workspace/dotfiles
+dotfiles_repo=~/workspace/dotfiles
 alias config='git --git-dir=$dotfiles_repo --work-tree=$HOME'
 
 ydl () {
