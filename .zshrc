@@ -6,12 +6,15 @@ export PATH=$PATH:/usr/local/lib/x86_64-linux-gnu/perl/5.26.1/
 # Add GO path
 export PATH=$PATH:/home/valentin/go/bin
 export PATH="$HOME/.cargo/bin:$PATH"
+# Clangd
+export PATH=$PATH:/usr/local/opt/llvm/bin
 
 # Python startup
 export PYTHONSTARTUP=~/.pythonrc
 
 # Path to your oh-my-zsh installation.
-if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+OS=$(uname 2> /dev/null)
+if [ $OS = "Darwin" ]; then
     export ZSH="/Users/valentin/.oh-my-zsh"
     source $(brew --prefix)/etc/profile.d/z.sh
     source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -22,7 +25,7 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
     )
     # Start tmux
     if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
-elif [ "$(uname 2> /dev/null)" = "Linux" ]; then
+elif [ $OS = "Linux" ]; then
     export ZSH="/home/valentin/.oh-my-zsh"
     plugins=(
         git
@@ -43,7 +46,8 @@ fi
 # git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
 # ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
 ZSH_THEME='typewritten'
-TYPEWRITTEN_PROMPT_LAYOUT='singleline'
+if [ $OS = 'Darwin' ]; then; LAYOUT='singleline'; else; LAYOUT='multiline'; fi
+TYPEWRITTEN_PROMPT_LAYOUT=$LAYOUT
 TYPEWRITTEN_SYMBOL='>'
 TYPEWRITTEN_CURSOR='block'
 
