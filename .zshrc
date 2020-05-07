@@ -49,7 +49,6 @@ fi
 # ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
 ZSH_THEME='typewritten'
 if [ $OS = 'Darwin' ]; then; LAYOUT='singleline'; else; LAYOUT='multiline'; fi
-echo $LAYOUT
 TYPEWRITTEN_PROMPT_LAYOUT=$LAYOUT
 TYPEWRITTEN_SYMBOL='>'
 TYPEWRITTEN_CURSOR='block'
@@ -127,8 +126,9 @@ say () {
 
 eval $(thefuck --alias)
 
+echo ''
 neofetch
-echo ""
+echo ''
 fortune -s
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
