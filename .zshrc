@@ -15,6 +15,7 @@ export PYTHONSTARTUP=~/.pythonrc
 # Path to your oh-my-zsh installation.
 OS=$(uname 2> /dev/null)
 if [ $OS = "Darwin" ]; then
+    echo 'macos settings'
     export ZSH="/Users/valentin/.oh-my-zsh"
     source $(brew --prefix)/etc/profile.d/z.sh
     source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -26,6 +27,7 @@ if [ $OS = "Darwin" ]; then
     # Start tmux
     if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
 elif [ $OS = "Linux" ]; then
+    echo 'linux settings'
     export ZSH="/home/valentin/.oh-my-zsh"
     plugins=(
         git
@@ -47,6 +49,7 @@ fi
 # ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
 ZSH_THEME='typewritten'
 if [ $OS = 'Darwin' ]; then; LAYOUT='singleline'; else; LAYOUT='multiline'; fi
+echo $LAYOUT
 TYPEWRITTEN_PROMPT_LAYOUT=$LAYOUT
 TYPEWRITTEN_SYMBOL='>'
 TYPEWRITTEN_CURSOR='block'
