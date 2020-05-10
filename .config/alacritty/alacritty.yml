@@ -248,9 +248,9 @@ colors:
     background: '#181818'
     foreground: '#d8d8d8'
   # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '#d8d8d8'
-    cursor: '#d8d8d8'
+  # cursor:
+  #   text: '#d8d8d8'
+  #   cursor: '#d8d8d8'
   # Normal colors
   normal:
     black:   '#181818'

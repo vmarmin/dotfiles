@@ -6,31 +6,39 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+    " git
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
+    " file management
     Plug 'vifm/vifm.vim'
-    Plug 'tpope/vim-ragtag'
-    Plug 'lilydjwg/colorizer'
-    Plug 'ap/vim-css-color'
-    Plug 'tpope/vim-surround'
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-ragtag'
+    Plug 'jremmen/vim-ripgrep'
+    " looks
+    Plug 'lilydjwg/colorizer'
+    Plug 'ap/vim-css-color'
     Plug 'jnurmine/Zenburn'
     Plug 'morhetz/gruvbox'
     Plug 'dracula/vim', { 'as': 'dracula'  }
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'chriskempson/base16-vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'christoomey/vim-tmux-navigator'
-    Plug 'benmills/vimux'
-    Plug 'mbbill/undotree'
+    Plug 'ryanoasis/vim-devicons'
+    " comment
+    Plug 'tpope/vim-commentary'
+    " coding
+    Plug 'tpope/vim-surround'
     Plug 'nvie/vim-flake8'
     Plug 'dense-analysis/ale'
     Plug 'jiangmiao/auto-pairs'
     Plug 'sheerun/vim-polyglot'
-    Plug 'jremmen/vim-ripgrep'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'ryanoasis/vim-devicons'
+    " nav
+    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'benmills/vimux'
+    Plug 'mbbill/undotree'
 call plug#end()
 
 " Automatically install missing plugins on startup
