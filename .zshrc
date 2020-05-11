@@ -124,12 +124,36 @@ say () {
     echo "$@" | festival --tts
 }
 
+src_venv () {
+    if [[ -d venv ]]; then
+        echo 'sourcing venv'
+        source venv/bin/activate
+    elif [[ -d env ]]; then
+        echo 'sourcing env'
+        source env/bin/activate
+    fi
+}
+
+ide () {
+    # Split panes
+    tmux split-window -v -p 23
+    tmux split-window -h -p 50
+    # Reselect top pane
+    tmux select-pane -U
+    # Source venv if present
+    src_venv
+    # Start editor
+    nvim .
+}
+
 eval $(thefuck --alias)
 
 echo ''
 neofetch
 echo ''
 fortune -s
+# Source venv if present
+src_venv
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
