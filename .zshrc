@@ -50,7 +50,7 @@ fi
 ZSH_THEME='typewritten'
 if [ $OS = 'Darwin' ]; then; LAYOUT='singleline'; else; LAYOUT='multiline'; fi
 TYPEWRITTEN_PROMPT_LAYOUT=$LAYOUT
-TYPEWRITTEN_SYMBOL='>'
+TYPEWRITTEN_SYMBOL='$'
 TYPEWRITTEN_CURSOR='block'
 
 # Which plugins would you like to load?
