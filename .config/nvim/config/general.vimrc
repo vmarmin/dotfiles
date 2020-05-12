@@ -40,9 +40,10 @@ autocmd BufWritePre * :call TrimWhitespace()
 " color / appearance
 colorscheme gruvbox
 set background=dark
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark="soft"
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-let g:gruvbox_contrast_dark="soft"
 set colorcolumn=80
 set encoding=utf8
 set showmatch                   " show matching brackets

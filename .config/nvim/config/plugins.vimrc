@@ -11,7 +11,11 @@ let g:fzf_action = {
     \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_preview_window = 'right:60%'
+let g:fzf_buffers_jump = 1
 nnoremap <C-p> :Files<CR>
+nnoremap <C-f> :BLines<CR>
+inoremap <C-f> :BLines<CR>
+nnoremap <leader>b :Buffers!<CR>
 
 " ripgrep --------------------------------------------------------------------
 if executable('rg')
