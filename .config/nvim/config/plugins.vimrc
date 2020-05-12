@@ -1,5 +1,12 @@
-" fzf -----------------------------------------------------------------------
+" gruvbox colorscheme -------------------------------------------------------
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark="soft"
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
+" fzf -----------------------------------------------------------------------
 if has("mac")
     set rtp+=/usr/local/opt/fzf
 else

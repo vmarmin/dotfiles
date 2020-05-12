@@ -38,12 +38,6 @@ fun! TrimWhitespace()
 endfun
 autocmd BufWritePre * :call TrimWhitespace()
 " color / appearance
-colorscheme gruvbox
-set background=dark
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark="soft"
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 set colorcolumn=80
 set encoding=utf8
 set showmatch                   " show matching brackets
@@ -52,3 +46,6 @@ set path+=**
 set wildmenu
 set wildignore+=**/.git/**
 set hidden
+" edit / source nvim rc
+map <leader>rc :edit $HOME/.config/nvim/init.vim<CR>
+map <leader>src :source $HOME/.config/nvim/init.vim<CR>
