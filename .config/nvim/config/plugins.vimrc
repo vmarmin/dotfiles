@@ -81,26 +81,28 @@ endfun
 set statusline^=%{coc#status()}
 
 autocmd FileType * :call GoCoc()
-" git gutter -----------------------------------------------------------------
-" deactivate map
-let g:gitgutter_map_keys = 0
-" max signs
-let g:gitgutter_max_signs = 400
-" status line
-function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
-set statusline+=%{GitStatus()}
-" mappings
-nmap <leader>ggp <Plug>(GitGutterPrevHunk)
-nmap <leader>ggn <Plug>(GitGutterNextHunk)
-nmap <leader>ggu <Plug>(GitGutterUndoHunk)
-nmap <leader>ggs <Plug>(GitGutterStageHunk)
+
+" signify --------------------------------------------------------------------
+" toggle mapping
+nmap <leader>sf :SignifyToggle<CR>
+" faster update time
+set updatetime=100
+" hunk navigation
+nmap <leader>gj <plug>(signify-next-hunk)
+nmap <leader>gk <plug>(signify-prev-hunk)
+nmap <leader>gJ 9999<leader>gj
+nmap <leader>gK 9999<leader>gk
+" symbols
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change            = '~'
+let g:signify_sign_show_count = 0
+let g:signify_sign_show_text = 1
 
 " commentary -----------------------------------------------------------------
-nnoremap <leader>, :Commentary<CR>
-vnoremap <leader>, :Commentary<CR>
+nnoremap <leader>/ :Commentary<CR>
+vnoremap <leader>/ :Commentary<CR>
 
 " ale ------------------------------------------------------------------------
 
