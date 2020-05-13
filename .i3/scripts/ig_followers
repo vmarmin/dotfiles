@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+from bs4 import BeautifulSoup
+import requests
+import re
+
+# request url
+url = 'https://www.instagram.com/valentin.mrmn/'
+page = requests.get(url)
+
+# parse url
+soup = BeautifulSoup(page.content, 'html.parser')
+node = soup.find('meta', {'name': 'description'})
+description = node.get('content')
+
+# extract data from description
+# 740 Followers, 1,361 Following, 161 Posts - See Instagram photos and videos from Valentin (@valentin.mrmn)
+m = re.search('([0-9,.]*?) Followers', description)
+followers = '???'
+if m:
+    followers = m.group(1)
+print(followers)
