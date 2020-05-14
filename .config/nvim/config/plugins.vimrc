@@ -44,6 +44,14 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ''
 
 " coc ------------------------------------------------------------------------
+" extensions
+let g:coc_global_extensions=[
+            \ 'coc-explorer',
+            \ 'coc-python',
+            \ 'coc-syntax',
+            \ 'coc-html',
+            \ 'coc-json']
+" functions
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
@@ -56,12 +64,11 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
+" mappings
 inoremap <buffer> <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
             \ <SID>check_back_space() ? "\<TAB>" :
             \ coc#refresh()
-
 " navigate list with both tab and ctrl+[jk]
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -72,7 +79,6 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <buffer> <silent><expr> <C-space> coc#refresh()
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " GoTo code navigation.
 nmap <buffer> <leader>gd <Plug>(coc-definition)
 nmap <buffer> <leader>gy <Plug>(coc-type-definition)
@@ -83,8 +89,7 @@ nmap <buffer> <leader>rn <Plug>(coc-rename)
 xmap <buffer> <leader>f  <Plug>(coc-format-selected)
 nmap <buffer> <leader>f  <Plug>(coc-format-selected)
 nnoremap <buffer> <leader>cr :CocRestart
-
-" coc-explore
+" coc-explorer
 let g:coc_explorer_global_presets = {
 \   'floating': {
 \      'position': 'floating',
