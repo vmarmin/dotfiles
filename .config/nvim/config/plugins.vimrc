@@ -57,38 +57,56 @@ function! s:show_documentation()
   endif
 endfunction
 
-fun! GoCoc()
-    inoremap <buffer> <silent><expr> <TAB>
-                \ pumvisible() ? "\<C-n>" :
-                \ <SID>check_back_space() ? "\<TAB>" :
-                \ coc#refresh()
+inoremap <buffer> <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
 
-    " navigate list with both tab and ctrl+[jk]
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-    inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-    " validate list item with <CR>
-    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-    inoremap <buffer> <silent><expr> <C-space> coc#refresh()
-    nnoremap <silent> K :call <SID>show_documentation()<CR>
-    autocmd CursorHold * silent call CocActionAsync('highlight')
+" navigate list with both tab and ctrl+[jk]
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" validate list item with <CR>
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <buffer> <silent><expr> <C-space> coc#refresh()
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-    " GoTo code navigation.
-    nmap <buffer> <leader>gd <Plug>(coc-definition)
-    nmap <buffer> <leader>gy <Plug>(coc-type-definition)
-    nmap <buffer> <leader>gi <Plug>(coc-implementation)
-    nmap <buffer> <leader>qf <Plug>(coc-fix-current)
-    nmap <buffer> <leader>gr <Plug>(coc-references)
-    nmap <buffer> <leader>rn <Plug>(coc-rename)
-    xmap <buffer> <leader>f  <Plug>(coc-format-selected)
-    nmap <buffer> <leader>f  <Plug>(coc-format-selected)
-    nnoremap <buffer> <leader>cr :CocRestart
-endfun
+" GoTo code navigation.
+nmap <buffer> <leader>gd <Plug>(coc-definition)
+nmap <buffer> <leader>gy <Plug>(coc-type-definition)
+nmap <buffer> <leader>gi <Plug>(coc-implementation)
+nmap <buffer> <leader>qf <Plug>(coc-fix-current)
+nmap <buffer> <leader>gr <Plug>(coc-references)
+nmap <buffer> <leader>rn <Plug>(coc-rename)
+xmap <buffer> <leader>f  <Plug>(coc-format-selected)
+nmap <buffer> <leader>f  <Plug>(coc-format-selected)
+nnoremap <buffer> <leader>cr :CocRestart
+
+" coc-explore
+let g:coc_explorer_global_presets = {
+\   'floating': {
+\      'position': 'floating',
+\   },
+\   'floatingLeftside': {
+\      'position': 'floating',
+\      'floating-position': 'left-center',
+\      'floating-width': 30,
+\   },
+\   'floatingRightside': {
+\      'position': 'floating',
+\      'floating-position': 'right-center',
+\      'floating-width': 30,
+\   },
+\   'simplify': {
+\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
+nmap <C-n> :CocCommand explorer<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 set statusline^=%{coc#status()}
-
-autocmd FileType * :call GoCoc()
 
 " fugitive -------------------------------------------------------------------
 nmap <leader>gs :G<CR>
