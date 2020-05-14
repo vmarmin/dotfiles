@@ -5,6 +5,8 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="soft"
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+hi! Search ctermbg=black guibg=black guifg=NONE ctermfg=NONE
+hi! ColorColumn ctermbg=235 guibg=#2c2d27
 
 " fzf -----------------------------------------------------------------------
 if has("mac")
@@ -39,7 +41,7 @@ let g:airline_theme='gruvbox'
 " tabline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_alt_sep = ''
 
 " coc ------------------------------------------------------------------------
 function! s:check_back_space() abort
@@ -54,7 +56,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
 
 fun! GoCoc()
     inoremap <buffer> <silent><expr> <TAB>
@@ -89,6 +90,9 @@ set statusline^=%{coc#status()}
 
 autocmd FileType * :call GoCoc()
 
+" fugitive -------------------------------------------------------------------
+nmap <leader>gs :G<CR>
+
 " signify --------------------------------------------------------------------
 " toggle mapping
 nmap <leader>sf :SignifyToggle<CR>
@@ -112,7 +116,6 @@ nnoremap <leader>/ :Commentary<CR>
 vnoremap <leader>/ :Commentary<CR>
 
 " ale ------------------------------------------------------------------------
-
 let g:airline#extensions#ale#enabled = 1
 " Write this in your vimrc file
 let g:ale_lint_on_text_changed = 'never'
