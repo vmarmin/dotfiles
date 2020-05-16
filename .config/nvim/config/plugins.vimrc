@@ -15,7 +15,6 @@ else
     set rtp+=~/.fzf
 endif
 " configuration
-let $FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git/**'"
 let g:fzf_action = {
     \ 'ctrl-t': 'tab split',
     \ 'ctrl-x': 'split',

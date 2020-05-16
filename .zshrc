@@ -157,6 +157,13 @@ src_venv
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
+export FZF_DEFAULT_COMMAND="fd --hidden --exclude .git --type f"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+if [ $OS = "Linux" ]; then
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+fi
 
 PATH="/home/valentin/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/valentin/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
