@@ -155,6 +155,7 @@ fortune -s
 # Source venv if present
 src_venv
 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 PATH="/home/valentin/perl5/bin${PATH:+:${PATH}}"; export PATH;

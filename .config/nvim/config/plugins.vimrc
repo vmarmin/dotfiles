@@ -14,6 +14,8 @@ if has("mac")
 else
     set rtp+=~/.fzf
 endif
+" configuration
+let $FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git/**'"
 let g:fzf_action = {
     \ 'ctrl-t': 'tab split',
     \ 'ctrl-x': 'split',
@@ -21,6 +23,21 @@ let g:fzf_action = {
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_preview_window = 'right:60%'
 let g:fzf_buffers_jump = 1
+let g:fzf_colors =
+    \ { 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'] }
+" mappings
 nnoremap <C-p> :Files<CR>
 nnoremap <C-f> :BLines<CR>
 inoremap <C-f> :BLines<CR>
