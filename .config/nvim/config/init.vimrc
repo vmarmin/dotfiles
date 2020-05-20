@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ap/vim-css-color'
     Plug 'jnurmine/Zenburn'
     Plug 'morhetz/gruvbox'
+    Plug 'joshdick/onedark.vim'
     Plug 'dracula/vim', { 'as': 'dracula'  }
     Plug 'arcticicestudio/nord-vim'
     Plug 'chriskempson/base16-vim'

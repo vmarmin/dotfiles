@@ -3,11 +3,17 @@ colorscheme gruvbox
 set background=dark
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="soft"
+" one colorscheme -----------------------------------------------------------
+" colorscheme onedark
+" let g:onedark_hide_endofbuffer=1
+" let g:onedark_terminal_italics=1
+" let g:airline_theme='onedark'
+" let g:onedark_termcolors=16
+" colorscheme commons -------------------------------------------------------
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 hi! Search ctermbg=black guibg=black guifg=NONE ctermfg=NONE
 hi! ColorColumn ctermbg=235 guibg=#2c2d27
-
 " fzf -----------------------------------------------------------------------
 if has("mac")
     set rtp+=/usr/local/opt/fzf

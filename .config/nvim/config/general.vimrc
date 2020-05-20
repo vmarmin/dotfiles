@@ -9,7 +9,7 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 " line numbers
-"set number relativenumber
+set number relativenumber
 set noerrorbells
 set smartcase
 set cursorline
