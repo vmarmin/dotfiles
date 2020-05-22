@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:~/.local/bin
@@ -47,11 +54,18 @@ fi
 # Typewritten
 # git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
 # ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
-ZSH_THEME='typewritten'
-if [ $OS = 'Darwin' ]; then; LAYOUT='singleline'; else; LAYOUT='multiline'; fi
-TYPEWRITTEN_PROMPT_LAYOUT=$LAYOUT
-TYPEWRITTEN_SYMBOL='$'
-TYPEWRITTEN_CURSOR='block'
+# ZSH_THEME='typewritten'
+# if [ $OS = 'Darwin' ]; then; LAYOUT='singleline'; else; LAYOUT='multiline'; fi
+# TYPEWRITTEN_PROMPT_LAYOUT=$LAYOUT
+# TYPEWRITTEN_SYMBOL='$'
+# TYPEWRITTEN_CURSOR='block'
+
+# powerlevel10k
+# get source if not there
+if [[ ! -a ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
+ZSH_THEME='powerlevel10k/powerlevel10k'
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -170,3 +184,6 @@ PERL5LIB="/home/valentin/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5
 PERL_LOCAL_LIB_ROOT="/home/valentin/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/valentin/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/valentin/perl5"; export PERL_MM_OPT;
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
