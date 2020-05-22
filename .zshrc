@@ -32,7 +32,9 @@ if [ $OS = "Darwin" ]; then
         zsh-syntax-highlighting
     )
     # Start tmux
-    if [ "$TMUX" = "" ]; then tmux new-session -A -s main; fi
+    if [ "$TMUX" = "" ]; then
+        tmux new-session -A -s main
+    fi
 elif [ $OS = "Linux" ]; then
     echo 'linux settings'
     export ZSH="/home/valentin/.oh-my-zsh"
