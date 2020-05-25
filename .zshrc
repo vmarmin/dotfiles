@@ -123,6 +123,7 @@ alias ssh-config='vi ~/.ssh/config'
 alias github='/opt/GitHub\ Desktop/github-desktop'
 alias randwp="feh --bg-fill --randomize /home/valentin/Pictures/wallpapers"
 alias i3config='vi ~/.i3/config'
+alias tm='tmux new-session -A -s main'
 
 # Dotfiles management
 dotfiles_repo=~/workspace/dotfiles
