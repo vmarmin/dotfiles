@@ -44,9 +44,9 @@ let g:fzf_colors =
     \ 'header':  ['fg', 'Comment'] }
 " mappings
 nnoremap <C-p> :Files<CR>
+nnoremap <C-o> :Buffers<CR>
 nnoremap <C-f> :BLines<CR>
-inoremap <C-f> :BLines<CR>
-nnoremap <leader>b :Buffers!<CR>
+inoremap <C-r> :Rg<CR>
 
 " ripgrep --------------------------------------------------------------------
 if executable('rg')

@@ -18,7 +18,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-ragtag'
-    Plug 'jremmen/vim-ripgrep'
     " looks
     Plug 'lilydjwg/colorizer'
     Plug 'ap/vim-css-color'
