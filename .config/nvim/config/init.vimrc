@@ -14,7 +14,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
         Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
     endif
     " file management
-    Plug 'vifm/vifm.vim'
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-ragtag'

@@ -49,3 +49,5 @@ set hidden
 " edit / source nvim rc
 map <leader>rc :edit $HOME/.config/nvim/init.vim<CR>
 map <leader>src :source $HOME/.config/nvim/init.vim<CR>
+" deactivate netrw history
+let g:netrw_dirhistmax=0

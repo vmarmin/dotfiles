@@ -132,6 +132,7 @@ let g:coc_explorer_global_presets = {
 \   }
 \ }
 nmap <C-n> :CocCommand explorer<CR>
+nmap <leader>e :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 set statusline^=%{coc#status()}
@@ -211,11 +212,3 @@ nmap <Leader>vi :VimuxInspectRunner<CR>
 nmap <Leader>vq :VimuxCloseRunner<CR>
 nmap <Leader>vx :VimuxInterruptRunner<CR>
 nmap <Leader>vz :call VimuxZoomRunner()<CR>
-
-" vifm ----------------------------------------------------------------------
-" vifm mapping
-nmap <leader>fm :Vifm<CR>
-" use vifm instead of netrw
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
-let g:vifm_replace_netrw = 1
