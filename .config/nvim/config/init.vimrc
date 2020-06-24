@@ -5,7 +5,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.nvim/plugged')
     " git
     Plug 'tpope/vim-fugitive'
     if has('nvim') || has('patch-8.0.902')
