@@ -112,7 +112,7 @@ font:
     family: FiraCode Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Light
+    style: Regular
 
   # Bold font face
   bold:
@@ -122,7 +122,7 @@ font:
     # value specified for the normal font.
     family: FiraCode Nerd Font Mono
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    style: Bold
 
   # Italic font face
   italic:
@@ -147,7 +147,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 12
+  size: 9
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
