@@ -207,9 +207,10 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Monitor setup
-set $lmon "HDMI1"
-set $rmon "DP1"
-exec_always xrandr --output $rmon --mode 1920x1080 --pos 1920x0 --rotate normal --output $lmon --primary --mode 1920x1080 --pos 0x0 --rotate normal
+set $lmon "DP1"
+set $rmon "HDMI1"
+# 1920x1080 / 2560x1440 / 3840x2160
+exec_always xrandr --output $rmon --mode 2560x1440 --pos 2560x0 --rotate normal --output $lmon --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
 # Workspace on specific monitor
 workspace $workspace1 output $lmon
@@ -439,11 +440,11 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+# smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+smart_borders no_gaps
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
