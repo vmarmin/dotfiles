@@ -116,6 +116,7 @@ nmap <buffer> <leader>rn <Plug>(coc-rename)
 xmap <buffer> <leader>f  <Plug>(coc-format-selected)
 nmap <buffer> <leader>f  <Plug>(coc-format-selected)
 nnoremap <buffer> <leader>cr :CocRestart
+nnoremap <leader>cs :CocSearch<space>
 " coc-explorer
 let g:coc_explorer_global_presets = {
 \   'floating': {
