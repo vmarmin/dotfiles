@@ -210,7 +210,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 set $lmon "DP1"
 set $rmon "HDMI1"
 # 1920x1080 / 2560x1440 / 3840x2160
-exec_always xrandr --output $rmon --mode 2560x1440 --pos 2560x0 --rotate normal --output $lmon --primary --mode 1920x1080 --pos 0x0 --rotate normal
+exec_always xrandr --output $rmon --mode 1920x1080 --pos 1920x0 --rotate normal --output $lmon --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
 # Workspace on specific monitor
 workspace $workspace1 output $lmon
