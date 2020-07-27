@@ -31,7 +31,7 @@ let g:fzf_action = {
     \ 'ctrl-t': 'tab split',
     \ 'ctrl-x': 'split',
     \ 'ctrl-v': 'vsplit' }
-let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let g:fzf_preview_window = 'right:60%'
 let g:fzf_buffers_jump = 1
 let g:fzf_colors =
