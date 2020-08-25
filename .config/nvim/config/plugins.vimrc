@@ -32,6 +32,7 @@ let g:fzf_action = {
     \ 'ctrl-x': 'split',
     \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
 let g:fzf_preview_window = 'right:60%'
 let g:fzf_buffers_jump = 1
 let g:fzf_colors =
@@ -113,8 +114,9 @@ nmap <buffer> <leader>gi <Plug>(coc-implementation)
 nmap <buffer> <leader>qf <Plug>(coc-fix-current)
 nmap <buffer> <leader>gr <Plug>(coc-references)
 nmap <buffer> <leader>rn <Plug>(coc-rename)
-xmap <buffer> <leader>f  <Plug>(coc-format-selected)
-nmap <buffer> <leader>f  <Plug>(coc-format-selected)
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+command! -nargs=0 Format :call CocAction('format')
 nnoremap <buffer> <leader>cr :CocRestart
 nnoremap <leader>cs :CocSearch<space>
 " coc-explorer
@@ -143,7 +145,8 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 set statusline^=%{coc#status()}
 
 " fugitive -------------------------------------------------------------------
-nmap <leader>gs :G<CR>
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gc :GCheckout<CR>
 
 " signify --------------------------------------------------------------------
 " toggle mapping
