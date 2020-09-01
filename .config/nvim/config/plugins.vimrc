@@ -78,7 +78,8 @@ let g:coc_global_extensions=[
             \ 'coc-python',
             \ 'coc-syntax',
             \ 'coc-html',
-            \ 'coc-json']
+            \ 'coc-json',
+            \ 'coc-snippets']
 " functions
 function! s:check_back_space() abort
     let col = col('.') - 1
