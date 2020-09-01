@@ -31,10 +31,6 @@ if [ $OS = "Darwin" ]; then
         zsh-autosuggestions
         zsh-syntax-highlighting
     )
-    # Start tmux
-    if [ "$TMUX" = "" ]; then
-        tmux new-session -A -s main
-    fi
 elif [ $OS = "Linux" ]; then
     echo 'linux settings'
     export ZSH="/home/valentin/.oh-my-zsh"
@@ -152,6 +148,8 @@ src_venv () {
 }
 
 ide () {
+    # Start tmux
+    tm
     # Split panes
     tmux split-window -v -p 23
     tmux split-window -h -p 50
