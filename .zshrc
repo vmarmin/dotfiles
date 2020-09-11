@@ -122,8 +122,7 @@ alias i3config='vi ~/.config/i3/config'
 alias tm='tmux new-session -A -s main'
 
 # Dotfiles management
-dotfiles_repo=~/workspace/dotfiles
-alias config='git --git-dir=$dotfiles_repo --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 ydl () {
     youtube-dl --extract-audio --no-playlist --audio-format mp3 $1
