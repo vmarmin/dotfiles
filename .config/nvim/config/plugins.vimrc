@@ -1,20 +1,16 @@
 " gruvbox colorscheme -------------------------------------------------------
-let g:gruvbox_contrast_dark = 'hard'
-if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
+let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_invert_selection='0'
 let g:gruvbox_italic=1
 let g:gruvbox_bold=1
 colorscheme gruvbox
-set background=dark
+" set background=dark
 " one colorscheme -----------------------------------------------------------
 " colorscheme onedark
 " let g:onedark_hide_endofbuffer=1
 " let g:onedark_terminal_italics=1
 " let g:airline_theme='onedark'
-" let g:onedark_termcolors=16
+" let g:onedark_termcolors=256
 " colorscheme commons -------------------------------------------------------
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
@@ -254,3 +250,23 @@ nmap <Leader>vi :VimuxInspectRunner<CR>
 nmap <Leader>vq :VimuxCloseRunner<CR>
 nmap <Leader>vx :VimuxInterruptRunner<CR>
 nmap <Leader>vz :call VimuxZoomRunner()<CR>
+
+" goyo ------------------------------------------------------------------------
+function! s:goyo_enter()
+    set noshowmode
+    set noshowcmd
+    set scrolloff=999
+endfunction
+
+function! s:goyo_leave()
+    set showmode
+    set showcmd
+    set scrolloff=5
+endfunction
+
+nmap <leader>go :Goyo<CR>
+let g:goyo_width="50%"
+let g:goyo_height="85%"
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()

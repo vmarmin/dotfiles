@@ -19,6 +19,7 @@ call plug#begin('~/.nvim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-ragtag'
     " looks
+    Plug 'junegunn/goyo.vim'
     Plug 'lilydjwg/colorizer'
     Plug 'ap/vim-css-color'
     Plug 'jnurmine/Zenburn'
