@@ -5,6 +5,7 @@ let mapleader=" "
 " file management
 set noswapfile
 set nobackup
+set nowritebackup
 " undo
 set undodir=~/.vim/undodir
 set undofile
@@ -29,6 +30,7 @@ set tabstop=4                   " for proper display of files with tabs
 set shiftround                  " always round indents to multiple of shiftwidth
 set copyindent                  " use existing indents for new indents
 set preserveindent              " save as much indent structure as possible
+set clipboard=unnamedplus
 autocmd FileType html,xml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 " trim whitespace
 fun! TrimWhitespace()
@@ -40,12 +42,18 @@ autocmd BufWritePre * :call TrimWhitespace()
 " color / appearance
 set colorcolumn=80
 set encoding=utf8
+set t_Co=256
 set showmatch                   " show matching brackets
+set noshowmode
+set formatoptions-=cro          " stop newline continution of comments
 " wildmenu
 set path+=**
 set wildmenu
 set wildignore+=**/.git/**
 set hidden
+set pumheight=10
+set ruler
+set mouse=a                     " allow mouse usage
 " edit / source nvim rc
 map <leader>rc :edit $HOME/.config/nvim/init.vim<CR>
 map <leader>src :source $HOME/.config/nvim/init.vim<CR>
