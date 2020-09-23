@@ -15,6 +15,8 @@ set noerrorbells
 set smartcase
 set cursorline
 set nowrap
+" search
+set nohlsearch
 " split
 set splitbelow
 set splitright
