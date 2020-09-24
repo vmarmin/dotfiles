@@ -18,7 +18,7 @@ else
   " Themes
   source $HOME/.config/nvim/themes/gruvbox.vim
   source $HOME/.config/nvim/themes/airline.vim
-  source $HOME/.config/nvim/themes/commons.vim
+  " source $HOME/.config/nvim/themes/commons.vim
 
   " Plugin Configuration
   source $HOME/.config/nvim/plug-config/ale.vim

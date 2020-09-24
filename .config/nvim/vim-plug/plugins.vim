@@ -27,7 +27,6 @@ call plug#begin('~/.nvim/plugged')
     Plug 'joshdick/onedark.vim'
     Plug 'dracula/vim', { 'as': 'dracula'  }
     Plug 'arcticicestudio/nord-vim'
-    Plug 'chriskempson/base16-vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
