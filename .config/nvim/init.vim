@@ -16,8 +16,9 @@ if exists('g:vscode')
   source $HOME/.config/nvim/vscode/settings.vim
 else
   " Themes
-  source $HOME/.config/nvim/themes/gruvbox.vim
   source $HOME/.config/nvim/themes/airline.vim
+  source $HOME/.config/nvim/themes/gruvbox.vim
+  " source $HOME/.config/nvim/themes/oceanic_next.vim
   " source $HOME/.config/nvim/themes/commons.vim
 
   " Plugin Configuration

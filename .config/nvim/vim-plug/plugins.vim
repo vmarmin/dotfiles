@@ -20,6 +20,7 @@ call plug#begin('~/.nvim/plugged')
     Plug 'tpope/vim-ragtag'
     " looks
     Plug 'junegunn/goyo.vim'
+    Plug 'mhartington/oceanic-next'
     Plug 'lilydjwg/colorizer'
     Plug 'ap/vim-css-color'
     Plug 'jnurmine/Zenburn'
