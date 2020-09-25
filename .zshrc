@@ -157,7 +157,7 @@ ide () {
     # Source venv if present
     src_venv
     # Start editor
-    nvim .
+    nvim
 }
 
 echo ''
