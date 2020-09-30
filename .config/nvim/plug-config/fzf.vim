@@ -29,4 +29,5 @@ let g:fzf_colors =
 " mappings
 nnoremap <C-p> :Files<CR>
 nnoremap <C-f> :BLines<CR>
+nnoremap <leader>b :Buffers<CR>
 inoremap <C-r> :Rg<CR>
