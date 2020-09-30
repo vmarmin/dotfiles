@@ -17,11 +17,10 @@ set cursorline
 set nowrap
 " search
 set nohlsearch
+set incsearch
 " split
 set splitbelow
 set splitright
-" search
-set incsearch
 " indentation
 set autoindent                  " set the cursor at same indent as line above
 set smartindent                 " try to be smart about indenting (c-style)
