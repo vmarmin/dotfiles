@@ -31,6 +31,8 @@ set syscalls
 
 set trash
 
+set dotfiles
+
 " This is how many directories to store in the directory history.
 
 set history=100
@@ -414,6 +416,11 @@ nnoremap O :!gvim %f<cr>
 
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
+
+" personal mappings
+nnoremap . za
+nnoremap f :filter<space>
+nnoremap <bs> h
 
 " Interaction with system clipboard
 if has('win')
