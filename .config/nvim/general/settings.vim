@@ -54,7 +54,7 @@ set wildignore+=**/.git/**
 set hidden
 set pumheight=10
 set ruler
-set mouse=a                     " allow mouse usage
+" set mouse=a                     " allow mouse usage
 set scrolloff=8                 " scroll margin
 " edit / source nvim rc
 map <leader>rc :edit $HOME/.config/nvim/init.vim<CR>
