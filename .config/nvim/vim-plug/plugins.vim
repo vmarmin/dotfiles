@@ -21,6 +21,7 @@ call plug#begin('~/.nvim/plugged')
     " looks
     Plug 'junegunn/goyo.vim'
     Plug 'mhartington/oceanic-next'
+    Plug 'drewtempelmeyer/palenight.vim'
     Plug 'lilydjwg/colorizer'
     Plug 'ap/vim-css-color'
     Plug 'jnurmine/Zenburn'
