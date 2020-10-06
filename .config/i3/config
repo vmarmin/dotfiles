@@ -37,8 +37,8 @@ bindsym $mod+Return exec $termapp
 bindsym $mod+Shift+q kill
 
 # start program launcher
-# bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+space exec rofi -show run
 bindsym $mod+w exec rofi -show window -show-icons
 
 # launch categorized menu
@@ -147,7 +147,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Alt+space focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
