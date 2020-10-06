@@ -35,6 +35,8 @@ call plug#begin('~/.nvim/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
     Plug 'mhinz/vim-startify'
+    " tagbar
+    Plug 'majutsushi/tagbar'
     " comment
     Plug 'tpope/vim-commentary'
     " coding

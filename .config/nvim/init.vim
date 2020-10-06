@@ -34,6 +34,7 @@ else
   source $HOME/.config/nvim/plug-config/ripgrep.vim
   source $HOME/.config/nvim/plug-config/signify.vim
   source $HOME/.config/nvim/plug-config/undotree.vim
+  source $HOME/.config/nvim/plug-config/tagbar.vim
   source $HOME/.config/nvim/plug-config/vimux.vim
 endif
 
