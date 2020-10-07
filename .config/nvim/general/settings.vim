@@ -55,7 +55,7 @@ set hidden
 set pumheight=10
 set ruler
 " set mouse=a                     " allow mouse usage
-set scrolloff=8                 " scroll margin
+set scrolloff=5                 " scroll margin
 " edit / source nvim rc
 map <leader>rc :edit $HOME/.config/nvim/init.vim<CR>
 map <leader>src :source $HOME/.config/nvim/init.vim<CR>
