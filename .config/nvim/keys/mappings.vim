@@ -12,12 +12,12 @@ nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 " buffer resize (for max and other)
 nnoremap ˙ :vertical resize -3<CR>
-nnoremap ∆ :resize +3<CR>
-nnoremap ˚ :resize -3<CR>
+nnoremap ∆ :resize -3<CR>
+nnoremap ˚ :resize +3<CR>
 nnoremap ¬ :vertical resize +3<CR>
 nnoremap <M-h> :vertical resize -3<CR>
-nnoremap <M-j> :resize +3<CR>
-nnoremap <M-k> :resize -3<CR>
+nnoremap <M-j> :resize -3<CR>
+nnoremap <M-k> :resize +3<CR>
 nnoremap <M-l> :vertical resize +3<CR>
 " tabbing
 vnoremap < <gv
