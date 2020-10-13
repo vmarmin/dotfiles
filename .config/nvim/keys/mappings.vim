@@ -25,5 +25,5 @@ vnoremap > >gv
 " move selection
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
-" dev mappings
-map <leader>py :!python %<cr>
+" paste replace
+vnoremap <leader>p "_dP
