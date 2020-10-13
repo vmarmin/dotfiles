@@ -2,3 +2,4 @@ vifminfo
 .vim/
 autoload/
 .cfg
+*.pyc

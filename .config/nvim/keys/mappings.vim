@@ -1,6 +1,6 @@
 " Make `jj` and `jk` throw you into normal mode
-inoremap jj <esc>
-inoremap jk <esc>
+" inoremap jj <esc>
+" inoremap jk <esc>
 " search highlight toggle
 nnoremap <F3> :set hlsearch!<cr>
 " buffer nav
