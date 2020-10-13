@@ -18,6 +18,7 @@ call plug#begin('~/.nvim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-ragtag'
+    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     " looks
     Plug 'junegunn/goyo.vim'
     Plug 'mhartington/oceanic-next'
