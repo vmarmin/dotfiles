@@ -83,7 +83,8 @@ let g:coc_explorer_global_presets = {
 \   }
 \ }
 nmap <C-n> :CocCommand explorer<CR>
-nmap <leader>e :CocCommand explorer --preset floating<CR>
+nmap <M-n> :CocCommand explorer --preset floating<CR>
+nmap ˜ :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
