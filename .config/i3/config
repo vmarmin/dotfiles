@@ -344,7 +344,8 @@ exec --no-startup-id blueman-applet
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
+# exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
+exec_always --no-startup-id "killall -q picom; picom --experimental-backends"
 
 # Screenshots
 bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/screenshots'
