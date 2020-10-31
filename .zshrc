@@ -61,6 +61,13 @@ fi
 # TYPEWRITTEN_SYMBOL='$'
 # TYPEWRITTEN_CURSOR='block'
 
+# # spaceship
+# if [[ ! -a $ZSH_CUSTOM/themes/spaceship.zsh-theme ]]; then
+#   git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+#   ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+# fi
+# ZSH_THEME="spaceship"
+
 # powerlevel10k
 # get source if not there
 if [[ ! -a ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k ]]; then
