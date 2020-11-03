@@ -26,7 +26,8 @@ else
 
   " Plugin Configuration
   source $HOME/.config/nvim/plug-config/ale.vim
-  source $HOME/.config/nvim/plug-config/rnvimr.vim
+  " source $HOME/.config/nvim/plug-config/rnvimr.vim
+  source $HOME/.config/nvim/plug-config/vifm.vim
   source $HOME/.config/nvim/plug-config/coc.vim
   source $HOME/.config/nvim/plug-config/commentary.vim
   source $HOME/.config/nvim/plug-config/fugitive.vim
