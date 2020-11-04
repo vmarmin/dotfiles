@@ -175,7 +175,8 @@ command! reload :write | restart
 " program.
 
 " Code file viewer
-fileviewer *.py,*.html,*.sh,*.h,*.c bat
+fileviewer *.[ch],*.[ch]pp,*.[ch]xx,*.py,*.sh,*.log,*.css,*.html,*.xml,*.yml,*rc,*.bat,*.js,*.ini,*.cfg
+        \ bat --color always --wrap never --pager never -p %c
 
 " Pdf
 filextype *.pdf zathura %c %i &, apvlv %c, open %c
