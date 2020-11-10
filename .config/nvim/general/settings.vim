@@ -1,5 +1,6 @@
 " syntax
 syntax on
+set nocompatible
 " leader key
 let mapleader=" "
 " file management
