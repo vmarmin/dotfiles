@@ -1,5 +1,7 @@
 vifminfo
+vifminfo.json
 .vim/
+.config/nvim/sessions/
 autoload/
 .cfg
 *.pyc
