@@ -45,7 +45,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 
 # File manager
 bindsym $mod+m exec $termapp -e vifm
-bindsym $mod+shift+m exec nemo
+bindsym $mod+shift+m exec dolphin
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
