@@ -3,6 +3,7 @@
 " inoremap jk <esc>
 " search highlight toggle
 nnoremap <F3> :set hlsearch!<cr>
+nmap <F2> :wa<Bar>exe "mksession! " . v:this_session<CR>:so ~/.config/nvim/sessions
 " buffer nav
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
