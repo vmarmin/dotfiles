@@ -33,7 +33,7 @@ set shiftround                  " always round indents to multiple of shiftwidth
 set copyindent                  " use existing indents for new indents
 set preserveindent              " save as much indent structure as possible
 set clipboard=unnamedplus
-autocmd FileType html,htmldjango,xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,htmldjango,xml,json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " trim whitespace
 fun! TrimWhitespace()
     let l:save = winsaveview()
