@@ -21,6 +21,7 @@ call plug#begin('~/.nvim/plugged')
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'vifm/vifm.vim'
     " looks
+    Plug 'sainnhe/sonokai'
     Plug 'junegunn/goyo.vim'
     Plug 'mhartington/oceanic-next'
     Plug 'drewtempelmeyer/palenight.vim'

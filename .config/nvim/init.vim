@@ -20,6 +20,7 @@ else
   source $HOME/.config/nvim/themes/gruvbox.vim
   " source $HOME/.config/nvim/themes/palenight.vim
   " source $HOME/.config/nvim/themes/ayu.vim
+  " source $HOME/.config/nvim/themes/sonokai.vim
   " source $HOME/.config/nvim/themes/one.vim
   " source $HOME/.config/nvim/themes/oceanic_next.vim
   " source $HOME/.config/nvim/themes/commons.vim
