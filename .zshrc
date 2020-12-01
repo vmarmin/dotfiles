@@ -111,12 +111,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias l='ls -lah'
+alias ls='exa'
+alias l='exa -lah'
 alias vi='nvim'
 alias v='nvim'
 alias vim='nvim'
 alias tcpdump='sudo tcpdump'
-alias lrt='ls -lrt'
+alias lrt='exa -lrt'
 alias ge='gedit'
 alias ws='cd ~/workspace && pwd'
 alias shutter='shutter -s'
