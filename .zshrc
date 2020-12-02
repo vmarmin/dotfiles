@@ -111,17 +111,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls='exa'
-alias l='exa -lah'
+if type exa > /dev/null; then
+    ls_cmd="exa"
+else
+    ls_cmd="ls"
+fi
+alias ls='$ls_cmd'
+alias l='$ls_cmd -lah'
+alias lrt='$ls_cmd -lrt'
 alias vi='nvim'
 alias v='nvim'
 alias vim='nvim'
 alias tcpdump='sudo tcpdump'
-alias lrt='exa -lrt'
 alias ge='gedit'
 alias ws='cd ~/workspace && pwd'
 alias shutter='shutter -s'
-alias getstackmanremote='sudo sshfs -o allow_other valentin@10.10.0.25:/home/stackman/Stackman /mnt/rem-stackman'
 alias yank='yank-cli'
 alias pip-upgrade="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias chrome='google-chrome'
