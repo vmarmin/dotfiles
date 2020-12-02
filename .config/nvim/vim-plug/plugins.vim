@@ -18,7 +18,7 @@ call plug#begin('~/.nvim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-ragtag'
-    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+    " Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'vifm/vifm.vim'
     " looks
     Plug 'sainnhe/sonokai'
