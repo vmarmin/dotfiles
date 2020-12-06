@@ -113,12 +113,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 if type exa > /dev/null; then
     ls_cmd="exa"
+    newest="-soldest"
 else
     ls_cmd="ls"
+    newest="-t"
 fi
 alias ls='$ls_cmd'
 alias l='$ls_cmd -lah'
-alias lrt='$ls_cmd -lrt'
+alias lrt='$ls_cmd -lar $newest'
 alias vi='nvim'
 alias v='nvim'
 alias vim='nvim'
