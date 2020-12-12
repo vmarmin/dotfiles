@@ -1,6 +1,3 @@
-" Make `jj` and `jk` throw you into normal mode
-" inoremap jj <esc>
-" inoremap jk <esc>
 " search highlight toggle
 nnoremap <F3> :set hlsearch!<cr>
 nmap <F2> :wa<Bar>exe "mksession! " . v:this_session<CR>:so ~/.config/nvim/sessions
@@ -11,7 +8,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
-" buffer resize (for max and other)
+" buffer resize (for mac and other)
 nnoremap ˙ :vertical resize -3<CR>
 nnoremap ∆ :resize -3<CR>
 nnoremap ˚ :resize +3<CR>

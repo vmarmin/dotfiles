@@ -18,15 +18,12 @@ call plug#begin('~/.nvim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-ragtag'
-    " Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'vifm/vifm.vim'
     " looks
-    Plug 'sainnhe/sonokai'
     Plug 'junegunn/goyo.vim'
     Plug 'mhartington/oceanic-next'
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'ayu-theme/ayu-vim'
-    Plug 'rakr/vim-one'
     Plug 'lilydjwg/colorizer'
     Plug 'ap/vim-css-color'
     Plug 'jnurmine/Zenburn'
@@ -45,7 +42,6 @@ call plug#begin('~/.nvim/plugged')
     " coding
     Plug 'tpope/vim-surround'
     Plug 'honza/vim-snippets'
-    " Plug 'nvie/vim-flake8'
     Plug 'dense-analysis/ale'
     Plug 'jiangmiao/auto-pairs'
     Plug 'sheerun/vim-polyglot'
