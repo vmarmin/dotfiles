@@ -41,6 +41,7 @@ call plug#begin('~/.nvim/plugged')
     Plug 'tpope/vim-commentary'
     " coding
     Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-repeat'
     Plug 'honza/vim-snippets'
     Plug 'dense-analysis/ale'
     Plug 'jiangmiao/auto-pairs'
