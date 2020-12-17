@@ -18,8 +18,8 @@ else
   " Themes
   source $HOME/.config/nvim/themes/airline.vim
   " source $HOME/.config/nvim/themes/gruvbox.vim
-  source $HOME/.config/nvim/themes/palenight.vim
-  " source $HOME/.config/nvim/themes/ayu.vim
+  " source $HOME/.config/nvim/themes/palenight.vim
+  source $HOME/.config/nvim/themes/ayu.vim
   " source $HOME/.config/nvim/themes/oceanic_next.vim
   " source $HOME/.config/nvim/themes/onedark.vim
   " Enable transparency
