@@ -20,7 +20,6 @@ call plug#begin('~/.nvim/plugged')
     Plug 'tpope/vim-ragtag'
     Plug 'vifm/vifm.vim'
     " looks
-    Plug 'junegunn/goyo.vim'
     Plug 'mhartington/oceanic-next'
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'ayu-theme/ayu-vim'
@@ -30,7 +29,6 @@ call plug#begin('~/.nvim/plugged')
     Plug 'gruvbox-community/gruvbox'
     Plug 'joshdick/onedark.vim'
     Plug 'dracula/vim', { 'as': 'dracula'  }
-    Plug 'arcticicestudio/nord-vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
@@ -40,13 +38,13 @@ call plug#begin('~/.nvim/plugged')
     " comment
     Plug 'tpope/vim-commentary'
     " coding
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
     Plug 'honza/vim-snippets'
     Plug 'dense-analysis/ale'
     Plug 'jiangmiao/auto-pairs'
     Plug 'sheerun/vim-polyglot'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " nav
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'benmills/vimux'
