@@ -20,12 +20,9 @@ call plug#begin('~/.nvim/plugged')
     Plug 'tpope/vim-ragtag'
     Plug 'vifm/vifm.vim'
     " looks
-    Plug 'mhartington/oceanic-next'
-    Plug 'drewtempelmeyer/palenight.vim'
     Plug 'ayu-theme/ayu-vim'
     Plug 'lilydjwg/colorizer'
     Plug 'ap/vim-css-color'
-    Plug 'jnurmine/Zenburn'
     Plug 'gruvbox-community/gruvbox'
     Plug 'joshdick/onedark.vim'
     Plug 'dracula/vim', { 'as': 'dracula'  }
