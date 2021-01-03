@@ -10,7 +10,8 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: screen-256color
+  # TERM: screen-256color
+  TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -34,11 +35,11 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -85,7 +86,7 @@ scrolling:
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
-  #multiplier: 3
+  multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
   #auto_scroll: false
@@ -181,7 +182,7 @@ font:
   use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night)
 #colors:
