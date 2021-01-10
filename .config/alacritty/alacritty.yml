@@ -346,8 +346,6 @@ shell:
   program: /bin/zsh
   args:
     - -l
-    - -c
-    - tmux new-session -A -s main
 
 # Startup directory
 #
