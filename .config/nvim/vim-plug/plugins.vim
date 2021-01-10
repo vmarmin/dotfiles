@@ -21,6 +21,7 @@ call plug#begin('~/.nvim/plugged')
     Plug 'vifm/vifm.vim'
     " looks
     Plug 'ayu-theme/ayu-vim'
+    Plug 'tomasr/molokai'
     Plug 'lilydjwg/colorizer'
     Plug 'ap/vim-css-color'
     Plug 'gruvbox-community/gruvbox'
