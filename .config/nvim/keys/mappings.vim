@@ -1,3 +1,5 @@
+" escape on C-c
+inoremap <C-c> <esc>
 " search highlight toggle
 nnoremap <F3> :set hlsearch!<cr>
 nmap <F2> :wa<Bar>exe "mksession! " . v:this_session<CR>:so ~/.config/nvim/sessions
