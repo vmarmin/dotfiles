@@ -184,36 +184,138 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night)
-#colors:
-  ## Default colors
-  #primary:
-    #background: '0x1d1f21'
-    #foreground: '0xc5c8c6'
-  ## Colors the cursor will use if `custom_cursor_colors` is true
-  #cursor:
-    #text: '0x1d1f21'
-    #cursor: '0xffffff'
-  ## Normal colors
-  #normal:
-    #black:   '0x1d1f21'
-    #red:     '0xcc6666'
-    #green:   '0xb5bd68'
-    #yellow:  '0xe6c547'
-    #blue:    '0x81a2be'
-    #magenta: '0xb294bb'
-    #cyan:    '0x70c0ba'
-    #white:   '0x373b41'
-  ## Bright colors
-  #bright:
-    #black:   '0x666666'
-    #red:     '0xff3334'
-    #green:   '0x9ec400'
-    #yellow:  '0xf0c674'
-    #blue:    '0x81a2be'
-    #magenta: '0xb77ee0'
-    #cyan:    '0x54ced6'
-    #white:   '0x282a2e'
+# # Colors (Snazzy)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#282a36'
+#     foreground: '#eff0eb'
+#   # Normal colors
+#   normal:
+#     black:   '#282a36'
+#     red:     '#ff5c57'
+#     green:   '#5af78e'
+#     yellow:  '#f3f99d'
+#     blue:    '#57c7ff'
+#     magenta: '#ff6ac1'
+#     cyan:    '#9aedfe'
+#     white:   '#f1f1f0'
+#   # Bright colors
+#   bright:
+#     black:   '#686868'
+#     red:     '#ff5c57'
+#     green:   '#5af78e'
+#     yellow:  '#f3f99d'
+#     blue:    '#57c7ff'
+#     magenta: '#ff6ac1'
+#     cyan:    '#9aedfe'
+#     white:   '#f1f1f0'
+
+# # Colors (One Dark)
+# colors:
+#   primary:
+#     background: '#282c34'
+#     foreground: '#abb2bf'
+#   cursor:
+#     text:       CellBackground
+#     cursor:     '#528bff' # syntax-cursor-color
+#   selection:
+#     text:       CellForeground
+#     background: '#3e4451' # syntax-selection-color
+#   normal:
+#     black:      '#5c6370' # mono-3
+#     red:        '#e06c75' # red 1
+#     green:      '#98c379'
+#     yellow:     '#e5c07b' # orange 2
+#     blue:       '#61afef'
+#     magenta:    '#c678dd'
+#     cyan:       '#56b6c2'
+#     white:      '#828997' # mono-2
+
+# # Colors (Dracula)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#282a36'
+#     foreground: '#f8f8f2'
+#   # Normal colors
+#   normal:
+#     black:   '#000000'
+#     red:     '#ff5555'
+#     green:   '#50fa7b'
+#     yellow:  '#f1fa8c'
+#     blue:    '#caa9fa'
+#     magenta: '#ff79c6'
+#     cyan:    '#8be9fd'
+#     white:   '#bfbfbf'
+#   # Bright colors
+#   bright:
+#     black:   '#575b70'
+#     red:     '#ff6e67'
+#     green:   '#5af78e'
+#     yellow:  '#f4f99d'
+#     blue:    '#caa9fa'
+#     magenta: '#ff92d0'
+#     cyan:    '#9aedfe'
+#     white:   '#e6e6e6'
+
+# # Colors (Ayu Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#0A0E14'
+#     foreground: '#B3B1AD'
+#   # Normal colors
+#   normal:
+#     black: '#01060E'
+#     red: '#EA6C73'
+#     green: '#91B362'
+#     yellow: '#F9AF4F'
+#     blue: '#53BDFA'
+#     magenta: '#FAE994'
+#     cyan: '#90E1C6'
+#     white: '#C7C7C7'
+#   # Bright colors
+#   bright:
+#     black: '#686868'
+#     red: '#F07178'
+#     green: '#C2D94C'
+#     yellow: '#FFB454'
+#     blue: '#59C2FF'
+#     magenta: '#FFEE99'
+#     cyan: '#95E6CB'
+#     white: '#FFFFFF'
+
+# # Colors (Tomorrow Night)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x1d1f21'
+#     foreground: '0xc5c8c6'
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0x1d1f21'
+#     cursor: '0xffffff'
+#   # Normal colors
+#   normal:
+#     black:   '0x1d1f21'
+#     red:     '0xcc6666'
+#     green:   '0xb5bd68'
+#     yellow:  '0xe6c547'
+#     blue:    '0x81a2be'
+#     magenta: '0xb294bb'
+#     cyan:    '0x70c0ba'
+#     white:   '0x373b41'
+#   # Bright colors
+#   bright:
+#     black:   '0x666666'
+#     red:     '0xff3334'
+#     green:   '0x9ec400'
+#     yellow:  '0xf0c674'
+#     blue:    '0x81a2be'
+#     magenta: '0xb77ee0'
+#     cyan:    '0x54ced6'
+#     white:   '0x282a2e'
 
 # # Colors (Gruvbox)
 # colors:
