@@ -36,6 +36,9 @@ call plug#begin('~/.nvim/plugged')
     " comment
     Plug 'tpope/vim-commentary'
     " coding
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
