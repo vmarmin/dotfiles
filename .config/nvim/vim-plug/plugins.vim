@@ -15,8 +15,8 @@ call plug#begin('~/.nvim/plugged')
         Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
     endif
     " file management
-    Plug 'junegunn/fzf.vim'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    " Plug 'junegunn/fzf.vim'
+    " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-ragtag'
     Plug 'vifm/vifm.vim'
     " looks
@@ -39,11 +39,13 @@ call plug#begin('~/.nvim/plugged')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'dense-analysis/ale'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
     Plug 'honza/vim-snippets'
-    Plug 'dense-analysis/ale'
     Plug 'jiangmiao/auto-pairs'
     Plug 'sheerun/vim-polyglot'
     " nav
