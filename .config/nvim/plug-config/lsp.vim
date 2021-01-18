@@ -17,6 +17,10 @@ lua require'lspconfig'.pyls.setup{ on_attach=require'completion'.on_attach }
 " lua require'lspconfig'.gopls.setup{ on_attach=require'completion'.on_attach }
 " lua require'lspconfig'.rust_analyzer.setup{ on_attach=require'completion'.on_attach }
 
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 if executable('pyls')
     " pip install python-language-server
     au User lsp_setup call lsp#register_server({
