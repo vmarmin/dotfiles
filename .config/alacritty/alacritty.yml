@@ -517,7 +517,7 @@ mouse:
     #   - (Linux/BSD) xdg-open
     #   - (Windows) explorer
     launcher:
-      program: xdg-open
+      program: open
       args: []
 
     # URL modifiers
