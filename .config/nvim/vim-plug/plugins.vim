@@ -24,7 +24,8 @@ call plug#begin('~/.nvim/plugged')
     Plug 'tomasr/molokai'
     Plug 'lilydjwg/colorizer'
     Plug 'ap/vim-css-color'
-    Plug 'gruvbox-community/gruvbox'
+    " Plug 'gruvbox-community/gruvbox'
+    Plug 'morhetz/gruvbox'
     Plug 'joshdick/onedark.vim'
     Plug 'dracula/vim', { 'as': 'dracula'  }
     Plug 'vim-airline/vim-airline'
