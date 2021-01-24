@@ -48,6 +48,7 @@ set t_Co=256
 set showmatch                   " show matching brackets
 set noshowmode
 set formatoptions-=cro          " stop newline continution of comments
+set termguicolors
 " wildmenu
 set path+=**
 set wildmenu

@@ -25,7 +25,7 @@ else
   " source $HOME/.config/nvim/themes/oceanic_next.vim
   " source $HOME/.config/nvim/themes/onedark.vim
   " Enable transparency
-  " source $HOME/.config/nvim/themes/commons.vim
+  source $HOME/.config/nvim/themes/commons.vim
 
   " Plugin Configuration
   source $HOME/.config/nvim/plug-config/vifm.vim
