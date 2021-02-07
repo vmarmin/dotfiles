@@ -142,6 +142,11 @@ alias xt='export TERM=xterm-256color'
 # Dotfiles management
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+pip-dev () {
+    src_venv
+    pip install -U neovim pynvim rope jedi flake8 isort yapf
+}
+
 ydl () {
     youtube-dl --extract-audio --no-playlist --audio-format mp3 $1
 }
