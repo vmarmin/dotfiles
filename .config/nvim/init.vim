@@ -17,15 +17,16 @@ if exists('g:vscode')
 else
   " Themes
   source $HOME/.config/nvim/themes/airline.vim
-  source $HOME/.config/nvim/themes/gruvbox.vim
+  " source $HOME/.config/nvim/themes/gruvbox.vim
   " source $HOME/.config/nvim/themes/dracula.vim
   " source $HOME/.config/nvim/themes/palenight.vim
   " source $HOME/.config/nvim/themes/molokai.vim
+  source $HOME/.config/nvim/themes/sonokai.vim
   " source $HOME/.config/nvim/themes/ayu.vim
   " source $HOME/.config/nvim/themes/oceanic_next.vim
   " source $HOME/.config/nvim/themes/onedark.vim
   " Enable transparency
-  source $HOME/.config/nvim/themes/commons.vim
+  " source $HOME/.config/nvim/themes/commons.vim
 
   " Plugin Configuration
   source $HOME/.config/nvim/plug-config/vifm.vim
