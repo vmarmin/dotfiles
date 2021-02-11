@@ -142,6 +142,10 @@ alias xt='export TERM=xterm-256color'
 # Dotfiles management
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# tmux-256color issues
+alias ssh='TERM=xterm-256color ssh'
+alias htop='TERM=xterm-256color htop'
+
 pip-dev () {
     src_venv
     pip install -U neovim pynvim rope jedi flake8 isort yapf
