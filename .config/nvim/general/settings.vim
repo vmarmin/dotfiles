@@ -72,3 +72,17 @@ let g:netrw_winsize = 25
 " italics
 set t_ZH=^[[3m
 set t_ZR=^[[23m
+
+" execude code
+augroup exe_code
+    autocmd!
+    " python
+    autocmd FileType python nnoremap <buffer> <leader>R
+        \ :sp<CR> :term python %<CR> :startinsert<CR>
+    " shell
+    autocmd FileType bash,sh nnoremap <buffer> <leader>R
+        \ :sp<CR> :term bash %<CR> :startinsert<CR>
+    " javascript
+    autocmd FileType javascript nnoremap <buffer> <leader>R
+        \ :sp<CR> :term nodejs %<CR> :startinsert<CR>
+augroup END
