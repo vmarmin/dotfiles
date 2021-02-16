@@ -1,4 +1,5 @@
-nmap <leader>gs :G<CR>
-nmap <leader>gc :GCheckout<CR>
-nmap <leader>gh :diffget //2
-nmap <leader>gl :diffget //3
+nnoremap <leader>gg :Git<space>
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gc :GCheckout<CR>
+nnoremap <leader>gh :diffget //2
+nnoremap <leader>gl :diffget //3

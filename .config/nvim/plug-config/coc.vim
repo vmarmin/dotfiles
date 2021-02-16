@@ -4,7 +4,10 @@ let g:coc_global_extensions=[
             \ 'coc-python',
             \ 'coc-syntax',
             \ 'coc-html',
+            \ 'coc-css',
             \ 'coc-json',
+            \ 'coc-tsserver',
+            \ 'coc-tslint',
             \ 'coc-snippets']
 
 " Use tab for trigger completion with characters ahead and navigate.
