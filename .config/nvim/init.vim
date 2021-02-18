@@ -37,7 +37,7 @@ else
   source $HOME/.config/nvim/plug-config/commentary.vim
   source $HOME/.config/nvim/plug-config/fugitive.vim
   " source $HOME/.config/nvim/plug-config/fzf.vim
-  source $HOME/.config/nvim/plug-config/ripgrep.vim
+  " source $HOME/.config/nvim/plug-config/ripgrep.vim
   source $HOME/.config/nvim/plug-config/signify.vim
   source $HOME/.config/nvim/plug-config/undotree.vim
   source $HOME/.config/nvim/plug-config/tagbar.vim
