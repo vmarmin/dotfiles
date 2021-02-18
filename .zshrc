@@ -148,7 +148,7 @@ alias htop='TERM=xterm-256color htop'
 
 pip-dev () {
     src_venv
-    pip install -U neovim pynvim rope jedi flake8 isort yapf
+    pip install -U neovim pynvim rope jedi flake8 isort yapf python-language-server pyls-isort
 }
 
 ydl () {
