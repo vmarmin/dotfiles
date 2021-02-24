@@ -51,8 +51,7 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+" coc navigation mappings ----------------------------------------------------
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " GoTo code navigation.
@@ -66,7 +65,8 @@ nmap <leader>f  <Plug>(coc-format-selected)
 command! -nargs=0 Format :call CocAction('format')
 nnoremap <buffer> <leader>cr :CocRestart
 nnoremap <leader>cs :CocSearch<space>
-" coc-explorer
+
+" coc-explorer ---------------------------------------------------------------
 let g:coc_explorer_global_presets = {
 \   'floating': {
 \      'position': 'floating',
