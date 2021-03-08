@@ -8,7 +8,7 @@ set noswapfile
 set nobackup
 set nowritebackup
 " undo
-set undodir=~/.vim/undodir
+set undodir=~/.nvim/undodir
 set undofile
 " line numbers
 set number relativenumber
