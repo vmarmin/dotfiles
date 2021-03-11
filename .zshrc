@@ -145,6 +145,7 @@ alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # tmux-256color issues
 alias ssh='TERM=xterm-256color ssh'
 alias htop='TERM=xterm-256color htop'
+alias glances='TERM=xterm-256color glances'
 
 pip-dev () {
     src_venv
