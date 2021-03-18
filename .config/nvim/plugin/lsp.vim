@@ -26,5 +26,14 @@ let g:completion_enable_auto_popup = 1
 " imap <tab> <Plug>(completion_smart_tab)
 " imap <s-tab> <Plug>(completion_smart_s_tab)
 
-" Use completion-nvim in every buffer
-autocmd BufEnter * lua require'completion'.on_attach()
+" function to populate location list with lsp diagnostics
+fun! LspLocationList()
+    lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
+endfun
+
+augroup MY_GROUP
+    autocmd!
+    " Use completion-nvim in every buffer
+    autocmd! BufEnter * lua require'completion'.on_attach()
+    autocmd! BufWrite,BufEnter,InsertLeave * :call LspLocationList()
+augroup END
