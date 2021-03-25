@@ -149,7 +149,7 @@ alias glances='TERM=xterm-256color glances'
 
 pip-dev () {
     src_venv
-    pip install -U neovim pynvim rope jedi flake8 isort yapf python-language-server pyls-isort
+    pip install -U neovim pynvim rope jedi flake8 isort yapf python-language-server
 }
 
 ydl () {
