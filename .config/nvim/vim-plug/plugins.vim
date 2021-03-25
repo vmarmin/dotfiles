@@ -8,7 +8,6 @@ endif
 call plug#begin('~/.nvim/plugged')
     " git
     Plug 'tpope/vim-fugitive'
-    Plug 'stsewd/fzf-checkout.vim'
     if has('nvim') || has('patch-8.0.902')
         Plug 'mhinz/vim-signify'
     else
@@ -52,7 +51,6 @@ call plug#begin('~/.nvim/plugged')
     Plug 'sheerun/vim-polyglot'
     " nav
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'benmills/vimux'
     Plug 'mbbill/undotree'
 call plug#end()
 
