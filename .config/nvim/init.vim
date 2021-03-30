@@ -7,9 +7,9 @@
 "
 
 " General settings
-source $HOME/.config/nvim/vim-plug/plugins.vim
-source $HOME/.config/nvim/general/settings.vim
-source $HOME/.config/nvim/keys/mappings.vim
+source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/settings.vim
+source $HOME/.config/nvim/mappings.vim
 
 if exists('g:vscode')
   " VS Code extension
@@ -27,21 +27,6 @@ else
   " source $HOME/.config/nvim/themes/onedark.vim
   " Enable transparency
   " source $HOME/.config/nvim/themes/commons.vim
-
-  " Plugin Configuration
-  " source $HOME/.config/nvim/plug-config/vifm.vim
-  " source $HOME/.config/nvim/plug-config/coc.vim
-  " source $HOME/.config/nvim/plug-config/ale.vim
-  " source $HOME/.config/nvim/plug-config/lsp.vim
-  " source $HOME/.config/nvim/plug-config/telescope.vim
-  " source $HOME/.config/nvim/plug-config/commentary.vim
-  " source $HOME/.config/nvim/plug-config/fugitive.vim
-  " source $HOME/.config/nvim/plug-config/fzf.vim
-  " source $HOME/.config/nvim/plug-config/ripgrep.vim
-  " source $HOME/.config/nvim/plug-config/signify.vim
-  " source $HOME/.config/nvim/plug-config/undotree.vim
-  " source $HOME/.config/nvim/plug-config/tagbar.vim
-  " source $HOME/.config/nvim/plug-config/vimux.vim
 endif
 
 " Add paths to node and python here
