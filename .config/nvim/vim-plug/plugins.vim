@@ -18,6 +18,7 @@ call plug#begin('~/.nvim/plugged')
     " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-ragtag'
     Plug 'vifm/vifm.vim'
+    Plug 'kyazdani42/nvim-tree.lua'
     " looks
     Plug 'ayu-theme/ayu-vim'
     Plug 'tomasr/molokai'
