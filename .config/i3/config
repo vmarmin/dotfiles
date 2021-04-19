@@ -30,7 +30,8 @@ font xft:Source Code Pro 12
 floating_modifier $mod
 
 # start a terminal
-set $termapp alacritty
+set $termapp kitty
+# set $termapp alacritty
 bindsym $mod+Return exec $termapp
 
 # kill focused window
