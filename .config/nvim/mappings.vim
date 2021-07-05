@@ -27,3 +27,5 @@ vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
 " paste replace
 vnoremap <leader>p "_dP
+" toggle numbers
+nnoremap <leader>z :set invrnu invnu<CR>
