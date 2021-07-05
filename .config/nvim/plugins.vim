@@ -47,7 +47,8 @@ call plug#begin('~/.nvim/plugged')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
-    Plug 'honza/vim-snippets'
+    Plug 'Shougo/neosnippet.vim'
+    Plug 'Shougo/neosnippet-snippets'
     Plug 'jiangmiao/auto-pairs'
     Plug 'sheerun/vim-polyglot'
     " nav
