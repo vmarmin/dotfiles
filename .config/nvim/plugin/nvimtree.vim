@@ -47,7 +47,7 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-nnoremap <leader>e :NvimTreeToggle<CR>
+nnoremap <leader>e :NvimTreeRefresh<CR> :NvimTreeToggle<CR>
 " nnoremap <leader>r :NvimTreeRefresh<CR>
 " nnoremap <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen and NvimTreeClose are also available if you need them
@@ -70,8 +70,7 @@ lua <<EOF
       { key = "<",                                     cb = tree_cb("prev_sibling") },
       { key = ">",                                     cb = tree_cb("next_sibling") },
       { key = "P",                                     cb = tree_cb("parent_node") },
-      { key = "<BS>",                                  cb = tree_cb("close_node") },
-      { key = "<S-CR>",                                cb = tree_cb("close_node") },
+      { key = {"<BS>", "h", "<S-CR>"},                 cb = tree_cb("close_node") },
       { key = "<Tab>",                                 cb = tree_cb("preview") },
       { key = "K",                                     cb = tree_cb("first_sibling") },
       { key = "J",                                     cb = tree_cb("last_sibling") },
