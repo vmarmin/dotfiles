@@ -14,10 +14,7 @@ call plug#begin('~/.nvim/plugged')
         Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
     endif
     " file management
-    " Plug 'junegunn/fzf.vim'
-    " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'tpope/vim-ragtag'
-    Plug 'vifm/vifm.vim'
     Plug 'kyazdani42/nvim-tree.lua'
     " looks
     Plug 'ayu-theme/ayu-vim'
@@ -28,8 +25,8 @@ call plug#begin('~/.nvim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'joshdick/onedark.vim'
     Plug 'dracula/vim', { 'as': 'dracula'  }
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'hoob3rt/lualine.nvim'
+    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'ryanoasis/vim-devicons'
     Plug 'mhinz/vim-startify'
     " tagbar
@@ -40,9 +37,8 @@ call plug#begin('~/.nvim/plugged')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'dense-analysis/ale'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'kabouzeid/nvim-lspinstall'
     Plug 'nvim-lua/completion-nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'tpope/vim-surround'
@@ -52,7 +48,6 @@ call plug#begin('~/.nvim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'sheerun/vim-polyglot'
     " nav
-    Plug 'christoomey/vim-tmux-navigator'
     Plug 'mbbill/undotree'
 call plug#end()
 

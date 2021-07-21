@@ -16,7 +16,7 @@ if exists('g:vscode')
   source $HOME/.config/nvim/vscode/settings.vim
 else
   " Themes
-  source $HOME/.config/nvim/themes/airline.vim
+  " source $HOME/.config/nvim/themes/airline.vim
   " source $HOME/.config/nvim/themes/gruvbox.vim
   " source $HOME/.config/nvim/themes/dracula.vim
   " source $HOME/.config/nvim/themes/palenight.vim
