@@ -49,5 +49,6 @@ let g:everforest_enable_italic = 1
 let g:everforest_transparent_background = 1
 let g:everforest_sign_column_background = 'none'
 let g:everforest_diagnostic_text_highlight = 0
-let g:everforest_diagnostic_virtual_text = 'colored'
+" diagnostics color --> 'grey' or 'colored'
+let g:everforest_diagnostic_virtual_text = 'grey'
 colorscheme everforest
