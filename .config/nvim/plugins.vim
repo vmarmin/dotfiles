@@ -24,6 +24,7 @@ if has('nvim')
     Plug 'tpope/vim-ragtag'
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'sainnhe/sonokai'
+    Plug 'sainnhe/everforest'
     Plug 'morhetz/gruvbox'
     Plug 'hoob3rt/lualine.nvim'
     Plug 'kyazdani42/nvim-web-devicons'
