@@ -45,4 +45,9 @@ set background=dark
 " This configuration option should be placed before `colorscheme everforest`.
 " Available values: 'hard', 'medium'(default), 'soft'
 let g:everforest_background = 'medium'
+let g:everforest_enable_italic = 1
+let g:everforest_transparent_background = 1
+let g:everforest_sign_column_background = 'none'
+let g:everforest_diagnostic_text_highlight = 0
+let g:everforest_diagnostic_virtual_text = 'colored'
 colorscheme everforest
