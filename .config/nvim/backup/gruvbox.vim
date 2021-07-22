@@ -12,7 +12,7 @@ set background=dark
 " Set matching airline theme
 let g:airline_theme='gruvbox'
 
-colorscheme gruvbox
+" colorscheme gruvbox
 
 " Force transparent bg
 hi! Normal ctermbg=NONE guibg=NONE

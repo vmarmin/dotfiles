@@ -1,3 +1,6 @@
+" edit / source nvim rc
+map <leader>rc :edit $HOME/.config/nvim/init.vim<CR>
+map <leader>src :source $HOME/.config/nvim/init.vim<CR>
 " escape on C-c
 inoremap <C-c> <esc>
 " search highlight toggle

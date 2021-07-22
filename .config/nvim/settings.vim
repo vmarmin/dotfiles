@@ -1,27 +1,37 @@
 " syntax
 syntax on
 set nocompatible
+
 " leader key
 let mapleader=" "
+
+" filetype
+filetype plugin indent on
+
 " file management
 set noswapfile
 set nobackup
 set nowritebackup
+
 " undo
 set undodir=~/.nvim/undodir
 set undofile
+
 " line numbers
 set number relativenumber
 set noerrorbells
 set smartcase
 set cursorline
 set nowrap
+
 " search
 set nohlsearch
 set incsearch
+
 " split
 set splitbelow
 set splitright
+
 " indentation
 set autoindent                  " set the cursor at same indent as line above
 set smartindent                 " try to be smart about indenting (c-style)
@@ -34,6 +44,7 @@ set copyindent                  " use existing indents for new indents
 set preserveindent              " save as much indent structure as possible
 set clipboard=unnamedplus
 autocmd FileType html,htmldjango,xml,json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 " trim whitespace
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -41,6 +52,7 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 autocmd BufWritePre * :call TrimWhitespace()
+
 " color / appearance
 set colorcolumn=80
 set encoding=utf8
@@ -58,9 +70,7 @@ set pumheight=10
 set ruler
 " set mouse=a                     " allow mouse usage
 set scrolloff=8                 " scroll margin
-" edit / source nvim rc
-map <leader>rc :edit $HOME/.config/nvim/init.vim<CR>
-map <leader>src :source $HOME/.config/nvim/init.vim<CR>
+
 " deactivate netrw history
 let g:netrw_dirhistmax=0
 " netrw
@@ -69,9 +79,15 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 20
+
 " italics
 set t_ZH=^[[3m
 set t_ZR=^[[23m
+
+" vscode specifics
+if exists('g:vscode')
+    " to add if need be
+endif
 
 " execude code
 augroup exe_code
@@ -86,3 +102,6 @@ augroup exe_code
     autocmd FileType javascript nnoremap <buffer> <leader>R
         \ :sp<CR> :term nodejs %<CR> :startinsert<CR>
 augroup END
+
+" colorscheme
+colorscheme sonokai

@@ -1,6 +1,3 @@
-" load lua/vmarmin
-lua require("vmarmin")
-
 " Find files using Telescope command-line sugar.
 nnoremap <C-p> <cmd>Telescope git_files<cr>
 nnoremap <C-S-p> <cmd>Telescope find_files<cr>
