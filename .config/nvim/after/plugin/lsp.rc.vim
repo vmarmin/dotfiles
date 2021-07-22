@@ -1,32 +1,4 @@
-if !exists('g:loaded_completion') | finish | endif
-
-set completeopt=menuone,noinsert,noselect
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-
-nnoremap <silent> gd :lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD :lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gi :lua vim.lsp.buf.implementation()<CR>
-" nnoremap <silent> gs :lua vim.lsp.buf.signature_help()<CR>
-" gr cmd mapped with telescope
-" nnoremap gr :lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gr <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
-nnoremap <silent> <leader>rn :lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <leader>ss :lua vim.lsp.buf.signature_help()<CR>
-" nnoremap <silent> K :lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <leader>f :lua vim.lsp.buf.formatting()<CR>
-vnoremap <silent> <leader>f :lua vim.lsp.buf.range_formatting()<CR>
-nnoremap <silent> <leader>ca :lua vim.lsp.buf.code_action()<CR>
-nnoremap <silent> <leader>sld :lua vim.lsp.util.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
-nnoremap <silent> <leader>dn :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <silent> <leader>dp :lua vim.lsp.diagnostic.goto_prev()<CR>
-
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-let g:completion_enable_auto_popup = 1
-" imap <tab> <Plug>(completion_smart_tab)
-" imap <s-tab> <Plug>(completion_smart_s_tab)
+if !exists('g:lspconfig') | finish | endif
 
 " function to populate location list with lsp diagnostics
 fun! LspLocationList()
@@ -41,11 +13,82 @@ augroup MY_GROUP
 augroup END
 
 lua << EOF
-local on_attach = require'completion'.on_attach
+local nvim_lsp = require('lspconfig')
+local protocol = require'vim.lsp.protocol'
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  --Enable completion triggered by <c-x><c-o>
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  --buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  --buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  --buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  --buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  --buf_set_keymap('n', '<S-C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  --buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  buf_set_keymap("v", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+
+  -- formatting
+  if client.resolved_capabilities.document_formatting then
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.api.nvim_command [[augroup END]]
+  end
+
+  require'completion'.on_attach(client, bufnr)
+
+  --protocol.SymbolKind = { }
+  protocol.CompletionItemKind = {
+    '', -- Text
+    '', -- Method
+    '', -- Function
+    '', -- Constructor
+    '', -- Field
+    '', -- Variable
+    '', -- Class
+    'ﰮ', -- Interface
+    '', -- Module
+    '', -- Property
+    '', -- Unit
+    '', -- Value
+    '', -- Enum
+    '', -- Keyword
+    '﬌', -- Snippet
+    '', -- Color
+    '', -- File
+    '', -- Reference
+    '', -- Folder
+    '', -- EnumMember
+    '', -- Constant
+    '', -- Struct
+    '', -- Event
+    'ﬦ', -- Operator
+    '', -- TypeParameter
+  }
+end
+
 require'lspconfig'.tsserver.setup{ on_attach=on_attach }
 require'lspconfig'.clangd.setup{ on_attach=on_attach }
 -- require'lspconfig'.pyls.setup{ on_attach=on_attach }
-require'lspconfig'.pyright.setup{ on_attach=require'completion'.on_attach }
+require'lspconfig'.pyright.setup{ on_attach=on_attach }
 -- require'lspconfig'.gopls.setup{ on_attach=require'completion'.on_attach }
 -- require'lspconfig'.rust_analyzer.setup{ on_attach=require'completion'.on_attach }
 EOF
