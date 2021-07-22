@@ -7,12 +7,9 @@
 "
 
 " General settings
-runtime ./plugins.vim
 runtime ./settings.vim
+runtime ./plugins.vim
 runtime ./mappings.vim
-
-" load lua/vmarmin
-lua require("vmarmin")
 
 " Add paths to node and python here
 if !empty(glob("~/.config/nvim/paths.vim"))

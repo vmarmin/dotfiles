@@ -102,6 +102,3 @@ augroup exe_code
     autocmd FileType javascript nnoremap <buffer> <leader>R
         \ :sp<CR> :term nodejs %<CR> :startinsert<CR>
 augroup END
-
-" colorscheme
-colorscheme sonokai
