@@ -35,6 +35,7 @@ if has('nvim')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'tpope/vim-surround'
     Plug 'glepnir/lspsaga.nvim'
+    Plug 'nvim-lua/lsp-status.nvim'
     Plug 'folke/lsp-colors.nvim'
     Plug 'tpope/vim-repeat'
     Plug 'jiangmiao/auto-pairs'
