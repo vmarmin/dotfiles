@@ -5,13 +5,6 @@ fun! LspLocationList()
     lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
 endfun
 
-augroup MY_GROUP
-    autocmd!
-    " Use completion-nvim in every buffer
-    autocmd! BufEnter * lua require'completion'.on_attach()
-    autocmd! BufWrite,BufEnter,InsertLeave * :call LspLocationList()
-augroup END
-
 lua << EOF
 local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
@@ -44,14 +37,6 @@ local on_attach = function(client, bufnr)
   --buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   buf_set_keymap("v", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-
-  -- formatting
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
-  end
 
   require'completion'.on_attach(client, bufnr)
 

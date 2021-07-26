@@ -53,7 +53,6 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-" nvim tree bindings (not working when elsewhere)
 lua << EOF
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 vim.g.nvim_tree_bindings = {
