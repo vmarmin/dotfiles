@@ -32,3 +32,6 @@ vnoremap K :m '<-2<cr>gv=gv
 vnoremap <leader>p "_dP
 " toggle numbers
 nnoremap <leader>z :set invrnu invnu<CR>
+" keep view centered when navigating search results
+nnoremap n nzzzv
+nnoremap N Nzzzv

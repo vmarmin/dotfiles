@@ -44,6 +44,7 @@ set copyindent                  " use existing indents for new indents
 set preserveindent              " save as much indent structure as possible
 set clipboard=unnamedplus
 autocmd FileType html,htmldjango,xml,json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType h,hpp,c,cpp setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " trim whitespace
 fun! TrimWhitespace()
