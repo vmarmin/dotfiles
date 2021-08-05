@@ -25,3 +25,7 @@ show_always = true
 ssh_only = false
 format = "@[linux]($style) "
 style = "regular white"
+
+[cmd_duration]
+min_time = 600
+format = " [祥 $duration]($style)"
