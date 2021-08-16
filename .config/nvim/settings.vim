@@ -44,7 +44,8 @@ set copyindent                  " use existing indents for new indents
 set preserveindent              " save as much indent structure as possible
 set clipboard=unnamedplus
 autocmd FileType html,htmldjango,xml,json setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType h,hpp,c,cpp setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType h,hpp,c,cc,hh,cpp setlocal shiftwidth=3 tabstop=3 softtabstop=3 colorcolumn=90
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=80
 
 " trim whitespace
 fun! TrimWhitespace()
@@ -55,7 +56,7 @@ endfun
 autocmd BufWritePre * :call TrimWhitespace()
 
 " color / appearance
-set colorcolumn=80
+" set colorcolumn=80
 set encoding=utf8
 set t_Co=256
 set showmatch                   " show matching brackets
