@@ -4,7 +4,7 @@ nnoremap <leader>ff <cmd>Telescope find_files hidden=true prompt_prefix=🔍<cr>
 nnoremap <leader>ps <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>vrc :lua require("telescope.builtin").find_files({prompt_title="< VimRC >", cwd="$HOME/.config/nvim"})<cr>
+nnoremap <silent> <leader>vrc :lua require("telescope.builtin").find_files({prompt_title="< VimRC >", cwd="$HOME/.config/nvim"})<cr>
 
 lua << EOF
 -- totally optional to use setup
