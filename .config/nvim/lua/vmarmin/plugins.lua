@@ -45,11 +45,14 @@ return packer.startup(function(use)
   -- popup & plenary
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
+  -- versioning
+  use "tpope/vim-fugitive"
+  use "mhinz/vim-signify"
   -- colorschemes / appearance
+  use "mhinz/vim-startify"
   use "sainnhe/sonokai"
   use "sainnhe/everforest"
   use "morhetz/gruvbox"
-  use "mhinz/vim-signify"
   use "tpope/vim-ragtag"
   use "kyazdani42/nvim-tree.lua"
   use "hoob3rt/lualine.nvim"
@@ -60,6 +63,11 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  use "tpope/vim-repeat"
+  use "jiangmiao/auto-pairs"
+  use "norcalli/nvim-colorizer.lua"
+  use "sheerun/vim-polyglot"
+  use "tpope/vim-surround"
   -- lsp
   use "nvim-telescope/telescope.nvim"
 
