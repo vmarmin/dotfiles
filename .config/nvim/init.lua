@@ -1,3 +1,4 @@
+-- `init.lua` file requiring configuration files
 require "vmarmin.options"       -- lua/vmarmin/options.lua
 require "vmarmin.keymaps"       -- lua/vmarmin/keymaps.lua
 require "vmarmin.plugins"       -- lua/vmarmin/plugins.lua
