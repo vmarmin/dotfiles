@@ -5,7 +5,7 @@ local bo = vim.bo    -- buffer options
 
 -- search options
 o.hlsearch = false
-o.incsearch = false
+o.incsearch = true
 
 -- file management
 o.swapfile = false
