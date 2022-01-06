@@ -5,3 +5,4 @@ vifminfo.json
 autoload/
 .cfg
 *.pyc
+packer_compiled.lua
