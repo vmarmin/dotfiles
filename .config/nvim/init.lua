@@ -9,3 +9,5 @@ require "vmarmin.lualine"       -- lua/vmarmin/lualine.lua
 require "vmarmin.commentary"    -- lua/vmarmin/commentary.lua
 require "vmarmin.fugitive"      -- lua/vmarmin/fugitive.lua
 require "vmarmin.telescope"     -- lua/vmarmin/telescope.lua
+require "vmarmin.cmp"           -- lua/vmarmin/cmp.lua
+require "vmarmin.lsp"           -- lua/vmarmin/lsp

@@ -42,12 +42,15 @@ packer.init {
 return packer.startup(function(use)
   -- packer
   use "wbthomason/packer.nvim"
+
   -- popup & plenary
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
+
   -- versioning
   use "tpope/vim-fugitive"
   use "mhinz/vim-signify"
+
   -- colorschemes / appearance
   use "mhinz/vim-startify"
   use "sainnhe/sonokai"
@@ -68,8 +71,23 @@ return packer.startup(function(use)
   use "norcalli/nvim-colorizer.lua"
   use "sheerun/vim-polyglot"
   use "tpope/vim-surround"
-  -- lsp
+
+  -- cmp
   use "nvim-telescope/telescope.nvim"
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-cmdline"
+  use "saadparwaiz1/cmp_luasnip"
+  use "hrsh7th/cmp-nvim-lsp"
+
+  -- snippets
+  use "L3MON4D3/LuaSnip"
+  use "rafamadriz/friendly-snippets"
+
+  -- lsp
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
