@@ -56,6 +56,8 @@ return packer.startup(function(use)
   use "sainnhe/sonokai"
   use "sainnhe/everforest"
   use "morhetz/gruvbox"
+  use "joshdick/onedark.vim"
+  use "arcticicestudio/nord-vim"
   use "tpope/vim-ragtag"
   use "kyazdani42/nvim-tree.lua"
   use "hoob3rt/lualine.nvim"
