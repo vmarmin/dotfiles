@@ -1,16 +1,16 @@
 vim.cmd [[
-
-    " sonokai -------------------------------------------------------------------
-    " The configuration options should be placed before `colorscheme sonokai`.
-    " Available values: `'default'`, `'atlantis'`, `'andromeda'`, `'shusia'`, `'maia'`
-    let g:sonokai_style = 'default'
-    let g:sonokai_enable_italic = 1
-    let g:sonokai_disable_italic_comment = 0
-    let g:airline_theme = 'sonokai'
-    let g:sonokai_transparent_background = 1
-    let g:sonokai_sign_column_background = 'none'
-    let g:sonokai_diagnostic_text_highlight = 1
-    colorscheme sonokai
+"
+"    " sonokai -------------------------------------------------------------------
+"    " The configuration options should be placed before `colorscheme sonokai`.
+"    " Available values: `'default'`, `'atlantis'`, `'andromeda'`, `'shusia'`, `'maia'`
+"    let g:sonokai_style = 'default'
+"    let g:sonokai_enable_italic = 1
+"    let g:sonokai_disable_italic_comment = 0
+"    let g:airline_theme = 'sonokai'
+"    let g:sonokai_transparent_background = 1
+"    let g:sonokai_sign_column_background = 'none'
+"    let g:sonokai_diagnostic_text_highlight = 1
+"    colorscheme sonokai
 "
 "    " gruvbox -------------------------------------------------------------------
 "    let g:gruvbox_contrast_dark='medium'
@@ -34,21 +34,21 @@ vim.cmd [[
 "        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "    endif
-"
-"    "  everforest ----------------------------------------------------------------
-"    " For dark/light version.
-"    set background=dark
-"    " Set contrast.
-"    " This configuration option should be placed before `colorscheme everforest`.
-"    " Available values: 'hard', 'medium'(default), 'soft'
-"    let g:everforest_background = 'medium'
-"    let g:everforest_enable_italic = 1
-"    let g:everforest_transparent_background = 1
-"    let g:everforest_sign_column_background = 'none'
-"    let g:everforest_diagnostic_text_highlight = 0
-"    " diagnostics color --> 'grey' or 'colored'
-"    let g:everforest_diagnostic_virtual_text = 'grey'
-"    colorscheme everforest
+
+    "  everforest ----------------------------------------------------------------
+    " For dark/light version.
+    set background=dark
+    " Set contrast.
+    " This configuration option should be placed before `colorscheme everforest`.
+    " Available values: 'hard', 'medium'(default), 'soft'
+    let g:everforest_background = 'medium'
+    let g:everforest_enable_italic = 1
+    let g:everforest_transparent_background = 1
+    let g:everforest_sign_column_background = 'none'
+    let g:everforest_diagnostic_text_highlight = 0
+    " diagnostics color --> 'grey' or 'colored'
+    let g:everforest_diagnostic_virtual_text = 'grey'
+    colorscheme everforest
 
     """ onedark ----------------------------------------------------------------
     ""set background=dark
