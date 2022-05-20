@@ -54,7 +54,7 @@ o.ruler = true
 
 -- not working with lua
 vim.cmd [[autocmd FileType lua,html,htmldjango,xml,json setlocal shiftwidth=2 tabstop=2 softtabstop=2]]
-vim.cmd [[autocmd FileType h,hpp,c,cc,hh,cpp setlocal shiftwidth=3 tabstop=3 softtabstop=3 colorcolumn=90]]
+vim.cmd [[autocmd FileType h,hpp,c,cc,hh,cpp,qml setlocal shiftwidth=3 tabstop=3 softtabstop=3 colorcolumn=100]]
 vim.cmd [[autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=80]]
 vim.cmd [[set formatoptions-=cro]]
 vim.cmd [[let g:netrw_dirhistmax=0]]
