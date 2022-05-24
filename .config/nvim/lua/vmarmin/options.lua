@@ -7,6 +7,10 @@ local bo = vim.bo    -- buffer options
 o.hlsearch = false
 o.incsearch = true
 
+-- status and winbar
+o.laststatus = 3
+o.winbar = '%=%m %f'
+
 -- file management
 o.swapfile = false
 o.backup = false
