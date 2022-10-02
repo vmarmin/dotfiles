@@ -123,10 +123,15 @@ nvim_tree.setup {
     },
   },
   view = {
+    adaptive_size = false,
+    centralize_selection = false,
     width = 40,
-    height = 30,
     hide_root_folder = false,
     side = "left",
+    preserve_window_proportions = false,
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes",
     -- auto_resize = true,
     mappings = {
       custom_only = false,
@@ -163,8 +168,6 @@ nvim_tree.setup {
         { key = "g?",                                    cb = tree_cb("toggle_help") },
       },
     },
-    number = false,
-    relativenumber = false,
   },
   trash = {
     cmd = "trash",

@@ -75,7 +75,7 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dn", '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>dp", '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<cr>", opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format()' ]]
 end
 
 M.on_attach = function(client, bufnr)
