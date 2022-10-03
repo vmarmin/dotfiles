@@ -13,9 +13,6 @@ export LANG="en_US.UTF-8"
 export PATH=$PATH:~/.local/bin
 # Add perl path
 export PATH=$PATH:/usr/local/lib/x86_64-linux-gnu/perl/5.26.1/
-# Add GO path
-export PATH=$PATH:/home/valentin/go/bin
-export PATH="$HOME/.cargo/bin:$PATH"
 # Clangd
 export PATH=$PATH:/usr/local/opt/llvm/bin
 

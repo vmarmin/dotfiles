@@ -57,7 +57,6 @@ return packer.startup(function(use)
   use "sainnhe/everforest"
   use "morhetz/gruvbox"
   use "joshdick/onedark.vim"
-  use "arcticicestudio/nord-vim"
   use "tpope/vim-ragtag"
   use "kyazdani42/nvim-tree.lua"
   use "hoob3rt/lualine.nvim"
@@ -81,6 +80,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
   use "saadparwaiz1/cmp_luasnip"
+  use "simrat39/rust-tools.nvim"
   use "hrsh7th/cmp-nvim-lsp"
 
   -- snippets

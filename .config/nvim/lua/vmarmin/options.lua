@@ -60,6 +60,9 @@ o.ruler = true
 vim.cmd [[autocmd FileType lua,html,htmldjango,xml,json setlocal shiftwidth=2 tabstop=2 softtabstop=2]]
 vim.cmd [[autocmd FileType h,hpp,c,cc,hh,cpp,qml setlocal shiftwidth=3 tabstop=3 softtabstop=3 colorcolumn=100]]
 vim.cmd [[autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=80]]
+-- zimmer: to remove after
+vim.cmd [[autocmd FileType typescript setlocal filetype=xml shiftwidth=2 tabstop=2 softtabstop=2; LspRestart]]
+-- zimmer end
 vim.cmd [[set formatoptions-=cro]]
 vim.cmd [[let g:netrw_dirhistmax=0]]
 vim.cmd [[let g:netrw_banner = 0]]
