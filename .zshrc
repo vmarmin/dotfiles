@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 if type exa > /dev/null; then
     ls_cmd="exa"
-    newest="-soldest"
+    newest="-snew"
 else
     ls_cmd="ls"
     newest="-t"
