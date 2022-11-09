@@ -1,3 +1,12 @@
+-- nord -------------------------------------------------------------------
+vim.g.nord_contrast = true
+vim.g.nord_borders = false
+vim.g.nord_disable_background = true
+vim.g.nord_italic = true
+vim.g.nord_uniform_diff_background = true
+vim.g.nord_bold = false
+require('nord').set()
+
 vim.cmd [[
 "   " sonokai -------------------------------------------------------------------
 "   " The configuration options should be placed before `colorscheme sonokai`.
@@ -22,7 +31,7 @@ vim.cmd [[
 "   let g:gruvbox_termcolors=256
 "   set background=dark
 "   " Set matching airline theme
-"   ""let g:airline_theme='gruvbox'
+"   let g:airline_theme='gruvbox'
 "   colorscheme gruvbox
 "   " Force transparent bg
 "   hi! Normal ctermbg=NONE guibg=NONE
@@ -34,24 +43,24 @@ vim.cmd [[
 "       let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "   endif
 
-    "  everforest ----------------------------------------------------------------
-    " For dark/light version.
-    set background=dark
-    " Set contrast.
-    " This configuration option should be placed before `colorscheme everforest`.
-    " Available values: 'hard', 'medium'(default), 'soft'
-    let g:everforest_background = 'medium'
-    let g:everforest_enable_italic = 1
-    let g:everforest_transparent_background = 1
-    let g:everforest_sign_column_background = 'none'
-    let g:everforest_diagnostic_text_highlight = 0
-    " diagnostics color --> 'grey' or 'colored'
-    let g:everforest_diagnostic_virtual_text = 'grey'
-    colorscheme everforest
+"   "  everforest ----------------------------------------------------------------
+"   " For dark/light version.
+"   set background=dark
+"   " Set contrast.
+"   " This configuration option should be placed before `colorscheme everforest`.
+"   " Available values: 'hard', 'medium'(default), 'soft'
+"   let g:everforest_background = 'medium'
+"   let g:everforest_enable_italic = 1
+"   let g:everforest_transparent_background = 1
+"   let g:everforest_sign_column_background = 'none'
+"   let g:everforest_diagnostic_text_highlight = 0
+"   " diagnostics color --> 'grey' or 'colored'
+"   let g:everforest_diagnostic_virtual_text = 'grey'
+"   colorscheme everforest
 
-    """ onedark ----------------------------------------------------------------
-    ""set background=dark
-    ""let g:onetdark_termcolors = 256
-    ""let g:onedark_terminal_italics = 1
-    ""colorscheme onedark
+"   """ onedark ----------------------------------------------------------------
+"   set background=dark
+"   let g:onetdark_termcolors = 256
+"   let g:onedark_terminal_italics = 1
+"   colorscheme onedark
 ]]
