@@ -1,7 +1,7 @@
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'nord',
+    theme = 'nordfox',
     -- theme = 'everforest',
     -- component_separators = {'', ''},
     -- section_separators = {'', ''},

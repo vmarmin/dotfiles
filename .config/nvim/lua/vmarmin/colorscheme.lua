@@ -1,11 +1,25 @@
--- nord -------------------------------------------------------------------
-vim.g.nord_contrast = true
-vim.g.nord_borders = false
-vim.g.nord_disable_background = true
-vim.g.nord_italic = true
-vim.g.nord_uniform_diff_background = true
-vim.g.nord_bold = false
-require('nord').set()
+-- nord ------------------------------------------------------------------------
+-- vim.g.nord_contrast = true
+-- vim.g.nord_borders = false
+-- vim.g.nord_disable_background = true
+-- vim.g.nord_italic = true
+-- vim.g.nord_uniform_diff_background = true
+-- vim.g.nord_bold = false
+-- require('nord').set()
+
+-- nightfox --------------------------------------------------------------------
+local options = {
+  dim_inactive = true,
+  transparent = true,
+  style = {
+    comments = 'italic',
+    keywords = 'bold',
+  }
+}
+require('nightfox').setup({
+  options = options,
+})
+vim.cmd("colorscheme nordfox")
 
 vim.cmd [[
 "   " sonokai -------------------------------------------------------------------
