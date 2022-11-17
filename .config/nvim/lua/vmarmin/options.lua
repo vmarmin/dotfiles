@@ -1,7 +1,7 @@
 -- meta accessors
 local o = vim.o      -- global options
-local wo = vim.wo    -- window options
-local bo = vim.bo    -- buffer options
+-- local wo = vim.wo    -- window options
+-- local bo = vim.bo    -- buffer options
 
 -- search options
 o.hlsearch = false
