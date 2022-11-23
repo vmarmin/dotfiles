@@ -11,6 +11,7 @@ export LANG="en_US.UTF-8"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/usr/local/sbin
 # Add perl path
 export PATH=$PATH:/usr/local/lib/x86_64-linux-gnu/perl/5.26.1/
 # Clangd
