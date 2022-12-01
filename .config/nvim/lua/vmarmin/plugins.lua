@@ -52,6 +52,7 @@ return packer.startup(function(use)
   use "mhinz/vim-signify"
 
   -- colorschemes / appearance
+  use "folke/tokyonight.nvim"
   use "shaunsingh/nord.nvim"
   use "EdenEast/nightfox.nvim"
   use "mhinz/vim-startify"
