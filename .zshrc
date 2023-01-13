@@ -25,12 +25,9 @@ OS=$(uname 2> /dev/null)
 if [ $OS = "Darwin" ]; then
     echo 'macos settings'
     export ZSH="/Users/valentin/.oh-my-zsh"
-    source $(brew --prefix)/etc/profile.d/z.sh
-    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     plugins=(
         git
-        zsh-autosuggestions
-        zsh-syntax-highlighting
+        fzf
     )
 elif [ $OS = "Linux" ]; then
     echo 'linux settings'
