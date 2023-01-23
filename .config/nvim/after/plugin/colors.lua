@@ -45,7 +45,7 @@
 
 -- nightfox --------------------------------------------------------------------
 local options = {
-  dim_inactive = true,
+  dim_inactive = false,
   transparent = true,
   style = {
     comments = 'italic',
