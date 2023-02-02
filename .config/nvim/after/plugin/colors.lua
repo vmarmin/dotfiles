@@ -43,36 +43,40 @@
 -- vim.g.nord_bold = false
 -- require('nord').set()
 
--- nightfox --------------------------------------------------------------------
-local options = {
-  dim_inactive = false,
-  transparent = true,
-  style = {
-    comments = 'italic',
-    keywords = 'bold',
-  }
-}
-require('nightfox').setup({
-  options = options,
-})
-vim.cmd("colorscheme nordfox")
+-- -- nightfox --------------------------------------------------------------------
+-- local options = {
+--   dim_inactive = false,
+--   transparent = true,
+--   style = {
+--     comments = 'italic',
+--     keywords = 'bold',
+--   }
+-- }
+-- require('nightfox').setup({
+--   options = options,
+-- })
+-- vim.cmd("colorscheme nordfox")
 
--- -- everforest -----------------------------------------------------------------
--- vim.cmd [[
---   " For dark/light version.
---   set background=dark
---   " Set contrast.
---   " This configuration option should be placed before `colorscheme everforest`.
---   " Available values: 'hard', 'medium'(default), 'soft'
---   let g:everforest_background = 'soft'
---   let g:everforest_enable_italic = 1
---   let g:everforest_transparent_background = 1
---   let g:everforest_sign_column_background = 'none'
---   let g:everforest_diagnostic_text_highlight = 0
---   " diagnostics color --> 'grey' or 'colored'
---   let g:everforest_diagnostic_virtual_text = 'grey'
---   colorscheme everforest
--- ]]
+-- everforest -----------------------------------------------------------------
+vim.cmd [[
+  if has('termguicolors')
+    set termguicolors
+  endif
+  " For dark/light version.
+  set background=dark
+  " Set contrast.
+  " This configuration option should be placed before `colorscheme everforest`.
+  " Available values: 'hard', 'medium'(default), 'soft'
+  let g:everforest_background = 'soft'
+  let g:everforest_better_performance = 1
+  let g:everforest_enable_italic = 1
+  let g:everforest_transparent_background = 2
+  let g:everforest_sign_column_background = 'none'
+  let g:everforest_diagnostic_text_highlight = 0
+  " diagnostics color --> 'grey' or 'colored'
+  let g:everforest_diagnostic_virtual_text = 'grey'
+  colorscheme everforest
+]]
 
 -- -- sonokai -------------------------------------------------------------------
 -- vim.cmd [[
@@ -125,8 +129,8 @@ vim.cmd("colorscheme nordfox")
 require'lualine'.setup({
   options = {
     icons_enabled = true,
-    theme = 'nordfox',
-    -- theme = 'tokyonight',
+    -- theme = 'nordfox',
+    theme = 'everforest',
     -- component_separators = {'', ''},
     -- section_separators = {'', ''},
     component_separators = {'', ''},
