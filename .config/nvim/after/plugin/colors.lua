@@ -67,7 +67,7 @@ vim.cmd [[
   " Set contrast.
   " This configuration option should be placed before `colorscheme everforest`.
   " Available values: 'hard', 'medium'(default), 'soft'
-  let g:everforest_background = 'soft'
+  let g:everforest_background = 'medium'
   let g:everforest_better_performance = 1
   let g:everforest_enable_italic = 1
   let g:everforest_transparent_background = 2
