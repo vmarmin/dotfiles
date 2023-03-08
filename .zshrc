@@ -133,6 +133,7 @@ alias randwp="feh --bg-fill --randomize /home/valentin/Pictures/wallpapers"
 alias i3config='vi ~/.config/i3/config'
 alias tm='tmux new-session -A -s main'
 alias xt='export TERM=xterm-256color'
+alias lg='lazygit'
 
 # Dotfiles management
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
