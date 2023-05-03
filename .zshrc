@@ -24,20 +24,17 @@ export PYTHONSTARTUP=~/.pythonrc
 OS=$(uname 2> /dev/null)
 if [ $OS = "Darwin" ]; then
     echo 'macos settings'
-    export ZSH="/Users/valentin/.oh-my-zsh"
+    export ZSH="~/.oh-my-zsh"
     plugins=(
         git
         fzf
     )
 elif [ $OS = "Linux" ]; then
     echo 'linux settings'
-    export ZSH="/home/valentin/.oh-my-zsh"
+    export ZSH="/home/marminv/.oh-my-zsh"
     plugins=(
         git
-        zsh-autosuggestions
         zsh-syntax-highlighting
-        k
-	zsh-z
     )
 fi
 
@@ -142,6 +139,9 @@ alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ssh='TERM=xterm-256color ssh'
 alias htop='TERM=xterm-256color htop'
 alias glances='TERM=xterm-256color glances'
+
+# wsl aliases
+alias dev='cd /mnt/c/dev'
 
 pip-dev () {
     src_venv
