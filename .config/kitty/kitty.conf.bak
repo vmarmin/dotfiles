@@ -475,13 +475,11 @@ window_border_width 0.2pt
 #: this option. Using a value of center means the cell area will be
 #: placed centrally. A value of top-left means the padding will be on
 #: only the bottom and right edges.
-
-active_border_color #666666
+# active_border_color #666666
 
 #: The color for the border of the active window. Set this to none to
 #: not draw borders around the active window.
-
-inactive_border_color #333333
+# inactive_border_color #333333
 
 #: The color for the border of inactive windows
 
@@ -545,7 +543,7 @@ inactive_text_alpha 0.7
 
 #: The margin to the left and right of the tab bar (in pts)
 
-tab_bar_style separator
+tab_bar_style fade
 
 #: The tab bar style, can be one of: fade, separator, powerline, or
 #: hidden. In the fade style, each tab's edges fade into the
@@ -608,12 +606,11 @@ active_tab_title_template "{index}:{title}"
 
 #: Template to use for active tabs, if not specified falls back to
 #: tab_title_template.
-
-active_tab_foreground   #eee
-active_tab_background   #444
+# active_tab_foreground   #eee
+# active_tab_background   #444
 active_tab_font_style   bold
-inactive_tab_foreground #eee
-inactive_tab_background #222
+# inactive_tab_foreground #eee
+# inactive_tab_background #222
 inactive_tab_font_style normal
 
 #: Tab bar colors and styles
@@ -630,8 +627,7 @@ inactive_tab_font_style normal
 # foreground #dddddd
 # background #000000
 
-# include ./themes/Espresso.conf
-include ./themes/everforest.conf
+# Use `kitty +kitten themes` to browse themes
 
 #: The foreground and background colors
 
@@ -881,8 +877,7 @@ editor .
 #: }}}
 
 #: OS specific tweaks {{{
-
-macos_titlebar_color system
+# macos_titlebar_color system
 
 #: Change the color of the kitty window's titlebar on macOS. A value
 #: of system means to use the default system color, a value of
@@ -1372,3 +1367,9 @@ map cmd+0               change_font_size all 0
 #: }}}
 
 # }}}
+
+
+# BEGIN_KITTY_THEME
+# citylights
+include current-theme.conf
+# END_KITTY_THEME
