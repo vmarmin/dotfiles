@@ -24,14 +24,14 @@ export PYTHONSTARTUP=~/.pythonrc
 OS=$(uname 2> /dev/null)
 if [ $OS = "Darwin" ]; then
     echo 'macos settings'
-    export ZSH="~/.oh-my-zsh"
+    export ZSH="$HOME/.oh-my-zsh"
     plugins=(
         git
         fzf
     )
 elif [ $OS = "Linux" ]; then
     echo 'linux settings'
-    export ZSH="/home/marminv/.oh-my-zsh"
+    export ZSH="$HOME/.oh-my-zsh"
     plugins=(
         git
         zsh-syntax-highlighting
