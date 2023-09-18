@@ -55,12 +55,11 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "shaunsingh/nord.nvim"
   use "EdenEast/nightfox.nvim"
-  -- use "mhinz/vim-startify"
   use {
     "startup-nvim/startup.nvim",
     requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
     config = function()
-      require"startup".setup()
+      require"startup".setup({theme="evil"})
     end
   }
   use "sainnhe/sonokai"
