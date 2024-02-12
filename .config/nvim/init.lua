@@ -1,2 +1,2 @@
--- `init.lua` file requiring configuration files
-require("vmarmin")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
