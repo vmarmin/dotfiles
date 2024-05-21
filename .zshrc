@@ -142,6 +142,7 @@ alias glances='TERM=xterm-256color glances'
 
 # wsl aliases
 alias dev='cd /mnt/c/dev'
+alias pics='cd /mnt/c/Users/marminv/Pictures/'
 
 pip-dev () {
     src_venv
