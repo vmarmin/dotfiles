@@ -45,7 +45,10 @@ return {
     priority = 1000,
     config = function()
       require("everforest").setup({
-        -- config
+        background = "medium",
+        transparent_background_level = 0,
+        italics = true,
+        dim_inactive_windows = true,
       })
     end,
   },

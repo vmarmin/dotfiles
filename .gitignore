@@ -7,3 +7,4 @@ autoload/
 *.pyc
 packer_compiled.lua
 lazy-lock.json
+lazyvim.json
