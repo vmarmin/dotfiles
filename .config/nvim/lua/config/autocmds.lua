@@ -30,6 +30,17 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "FileType", "BufEnter" }, {
+  group = augroup("qmlfix"),
+  pattern = { "qml", "**.qml" },
+  callback = function()
+    vim.opt_local.shiftwidth = 3
+    vim.opt_local.tabstop = 3
+    vim.opt_local.softtabstop = 3
+    vim.opt_local.colorcolumn = { 100 }
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = augroup("indent4"),
   pattern = { "python" },
@@ -41,14 +52,16 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType", "BufEnter" }, {
-  group = augroup("qmlfix"),
-  pattern = { "qml", "**.qml" },
-  callback = function()
-    vim.bo.filetype = "javascript"
-    vim.opt_local.shiftwidth = 3
-    vim.opt_local.tabstop = 3
-    vim.opt_local.softtabstop = 3
-    vim.opt_local.colorcolumn = { 100 }
-  end,
-})
+-- Autoformat setting
+local set_autoformat = function(pattern, bool_val)
+  vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = pattern,
+    callback = function()
+      vim.b.autoformat = bool_val
+    end,
+  })
+end
+
+set_autoformat({ "cpp" }, false)
+set_autoformat({ "python" }, false)
+set_autoformat({ "lua" }, true)
