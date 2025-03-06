@@ -103,8 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if type exa > /dev/null; then
-    ls_cmd="exa"
+if type eza > /dev/null; then
+    ls_cmd="eza"
     newest="-snew"
 else
     ls_cmd="ls"
