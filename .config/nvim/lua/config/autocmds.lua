@@ -11,7 +11,7 @@ end
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = augroup("indent3"),
-  pattern = { "h", "cpp", "hh", "c", "cc", "hpp" },
+  pattern = { "h", "cpp", "hh", "c", "cc", "hpp", "qrc" },
   callback = function()
     vim.opt_local.shiftwidth = 3
     vim.opt_local.tabstop = 3
